@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/drawable/bg_back_btn.xml" value="0.147" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/drawable/bg_bg.xml" value="0.147" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/drawable/bg_et_icon.xml" value="0.147" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/drawable/bg_et_profile.xml" value="0.147" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/drawable/bg_gradient.xml" value="0.1425" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/drawable/bg_search_view.xml" value="0.147" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/drawable/bg_selected_item.xml" value="0.1655" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/drawable/bg_selected_item_ic.xml" value="0.139" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/drawable/bg_stroke_btn.xml" value="0.1535" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/drawable/bg_tab_indicator.xml" value="0.1655" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/drawable/bg_tab_layout.xml" value="0.147" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/drawable/bg_tub.xml" value="0.1655" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/drawable/bg_tuub.xml" value="0.1655" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/drawable/bg_tv_manga_read.xml" value="0.1425" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/drawable/ic_edit.xml" value="0.147" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/drawable/ic_home.xml" value="0.1535" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1535" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/drawable/item_comments.xml" value="0.1425" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/font/font.xml" value="0.28425925925925927" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/layout/fragment_all_manga.xml" value="0.22" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/layout/fragment_authorization.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/layout/fragment_blank.xml" value="0.21557971014492755" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/layout/fragment_edit_profile.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/layout/fragment_main.xml" value="0.22" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/layout/fragment_manga_comments.xml" value="0.22327898550724637" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/layout/fragment_manga_detail.xml" value="0.4538152610441767" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/layout/fragment_popular_manga.xml" value="0.22327898550724637" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/layout/fragment_sign_in.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/layout/fragment_sign_up.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/layout/fragment_start.xml" value="0.25" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/layout/fragment_top_manga.xml" value="0.23777173913043478" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/layout/item_comments.xml" value="0.22" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/layout/item_manga.xml" value="0.5" />
+        <entry key="..\:/Users/User/Desktop/Android Studio/MangaRead/app/src/main/res/menu/bottom_nav.xml" value="0.16" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

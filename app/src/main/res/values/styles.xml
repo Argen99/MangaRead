@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="BaseButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/dimen_text_16</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:paddingVertical" tools:targetApi="o">16dp</item>
+        <item name="android:backgroundTint">@color/purple</item>
+    </style>
+
+    <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="BaseTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+        <item name="boxCornerRadiusTopStart">8dp</item>
+        <item name="boxStrokeColor">@color/purple</item>
+        <item name="android:textColorHint">@color/dark_gray</item>
+    </style>
+
+    <style name="BaseTextInputEditText" parent="ThemeOverlay.Material3.TextInputEditText">
+        <item name="android:textSize">@dimen/dimen_text_16</item>
+        <item name="android:paddingVertical" tools:targetApi="o">@dimen/dimen_padding_14</item>
+        <item name="android:textColorHint">@color/dark_gray</item>
+    </style>
+
+    <style name="BaseBackButton" parent="Widget.AppCompat.ImageButton">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:background">@drawable/bg_back_btn</item>
+        <item name="android:src">@drawable/ic_back</item>
+    </style>
+
+</resources>

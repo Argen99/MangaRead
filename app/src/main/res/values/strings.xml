@@ -1,3 +1,38 @@
 <resources>
     <string name="app_name">MangaRead</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_txt_registration">Регистрация</string>
+    <string name="btn_txt_login">Войти</string>
+    <string name="txt_main">Главная</string>
+    <string name="txt_profile">Профиль</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="nickname">Nickname</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="login">Вход</string>
+    <string name="dont_have_an_account">У вас еще нет аккаунта ?</string>
+    <string name="have_an_account">У вас уже есть аккаунт ?</string>
+    <string name="add_image">Добавить фото</string>
+    <string name="placeholder">Placeholder</string>
+    <string name="all_manga">Вся манга</string>
+    <string name="top_100">Топ 100</string>
+    <string name="my_profile">Мой профиль</string>
+    <string name="logout">Выйти</string>
+    <string name="your_password">Ваш пароль</string>
+    <string name="your_email">Ваш логин</string>
+    <string name="your_name">Ваше имя</string>
+    <string name="change_photo">Изменить фото</string>
+    <string name="save">Сохранить</string>
+    <string name="year">Год:</string>
+    <string name="genre">Жанр:</string>
+    <string name="type">Тип:</string>
+    <string name="information">Информация</string>
+    <string name="read_more">Читать далее</string>
+
+
+    <string name="test_text">Android Inc. была основана в Пало-Альто, штат Калифорния, в октябре 2003 года Энди Рубином (основатель), Ричем Майнером (со-основатель), Ником Сирсом и Крисом Уайтом. Рубин описал проект Android как обладающий «огромным потенциалом в разработке более умных мобильных устройств, которые лучше осведомлены о местонахождении и предпочтениях своего владельца». Первоначальные намерения компании заключались в разработке передовой операционной системы для цифровых камер, и это было основой ее предложения инвесторам в апреле 2004 года. Затем компания решила, что рынок камер недостаточно велик для достижения ее целей, и пять месяцев спустя она отвлекла свои усилия и представила Android как операционную систему для мобильных телефонов, которая будет конкурировать с Symbian и Microsoft Windows Mobile.</string>
+    <string name="comments">Отзывы</string>
+    <string name="add_comment">Добавить</string>
+    <string name="synopsis">Синопсис</string>
 </resources>

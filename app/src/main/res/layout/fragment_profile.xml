@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingHorizontal="@dimen/dimen_padding_16"
+    android:clipToPadding="true"
+    tools:context=".presentation.ui.fragments.main.profile.ProfileFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:text="@string/my_profile"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:drawableStart="@drawable/ic_profile"
+            android:drawablePadding="@dimen/dimen_padding_8"
+            android:textSize="@dimen/dimen_text_18"
+            android:layout_height="wrap_content"/>
+
+        <ImageButton
+            android:layout_gravity="start|center_vertical"
+            android:layout_margin="@dimen/dimen_margin_8"
+            style="@style/BaseBackButton"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/btn_edit_profile"
+            android:src="@drawable/ic_edit"
+            android:layout_gravity="end|center_vertical"
+            android:backgroundTint="@color/white"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            tools:ignore="ContentDescription" />
+
+    </FrameLayout>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="150dp"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@drawable/default_avatar2"
+        android:layout_height="150dp"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:text="@string/change_photo"
+        android:textAllCaps="true"
+        android:textSize="@dimen/dimen_text_16"
+        android:textColor="@color/purple"
+        android:layout_marginTop="@dimen/dimen_margin_16"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:text="@string/your_name"
+        android:layout_marginTop="@dimen/dimen_margin_24"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dimen_text_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:text="Имя Фамилия"
+        android:textColor="@color/dark_gray"
+        android:textSize="@dimen/dimen_text_16"
+        android:layout_marginTop="@dimen/dimen_margin_8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:text="@string/your_email"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/dimen_margin_16"
+        android:textSize="@dimen/dimen_text_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:text="Ваш логин.@gmail.com"
+        android:textColor="@color/dark_gray"
+        android:layout_marginTop="@dimen/dimen_margin_8"
+        android:textSize="@dimen/dimen_text_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:text="@string/your_password"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/dimen_margin_16"
+        android:textSize="@dimen/dimen_text_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:text="*********"
+        android:textColor="@color/dark_gray"
+        android:layout_marginTop="@dimen/dimen_margin_8"
+        android:textSize="@dimen/dimen_text_16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_margin_24"
+        app:strokeColor="@color/purple"
+        app:strokeWidth="2dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/purple"
+        android:text="@string/logout" />
+
+</LinearLayout>

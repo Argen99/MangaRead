@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/authorizationFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.auth.authorization.AuthorizationFragment"
+        android:label="fragment_authorization"
+        tools:layout="@layout/fragment_authorization" >
+        <action
+            android:id="@+id/action_authorizationFragment_to_mainFragment"
+            app:popUpTo="@id/nav_graph.xml"
+            app:popUpToInclusive="true"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.main.home.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_mangaDetailFragment"
+            app:destination="@id/mangaDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.main.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.main.profile.edit_profile.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
+    <fragment
+        android:id="@+id/mangaDetailFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.main.home.manga_detail.MangaDetailFragment"
+        android:label="fragment_manga_detail"
+        tools:layout="@layout/fragment_manga_detail" >
+        <action
+            android:id="@+id/action_mangaDetailFragment_to_mangaCommentsFragment"
+            app:destination="@id/mangaCommentsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mangaCommentsFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.main.home.manga_detail.comments.MangaCommentsFragment"
+        android:label="fragment_manga_comments"
+        tools:layout="@layout/fragment_manga_comments" />
+    <fragment
+        android:id="@+id/allMangaFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.main.home.main.all_manga.AllMangaFragment"
+        android:label="fragment_all_manga"
+        tools:layout="@layout/fragment_all_manga" />
+    <fragment
+        android:id="@+id/popularMangaFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.main.home.main.top_manga.TopMangaFragment"
+        android:label="fragment_popular_manga"
+        tools:layout="@layout/fragment_top_manga" />
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.auth.sign_in.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" />
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.auth.sign_up.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" />
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.auth.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_authorizationFragment"
+            app:popUpTo="@id/nav_graph.xml"
+            app:popUpToInclusive="true"
+            app:destination="@id/authorizationFragment" />
+    </fragment>
+</navigation>
