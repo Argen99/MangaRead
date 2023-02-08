@@ -35,4 +35,31 @@
     <string name="comments">Отзывы</string>
     <string name="add_comment">Добавить</string>
     <string name="synopsis">Синопсис</string>
+    <string name="hide">Скрыть</string>
+    <string name="add_avatar">Добавьте фото</string>
+    <string name="invalid_password">Не верный пароль</string>
+    <string name="invalid_password1">Пароль должен быть не менее 8 символов</string>
+    <string name="invalid_nickname">Никнейм пользователя должен быть не менее 10 символов</string>
+    <string name="invalid_username">Имя пользователя должно быть не менее 10 символов</string>
+    <string name="no_reviews">Отзывов нет :(</string>
+    <string name="default_user_name">Имя Фамилия</string>
+    <string name="successful_logout">successful logout</string>
+    <string name="reset">Сбросить</string>
+    <string name="apply">Применить</string>
+    <string name="before">До 2022</string>
+    <string name="from">От 0</string>
+    <string name="tv_year">Год</string>
+    <string name="tv_type">Тип</string>
+    <string name="all">все</string>
+    <string name="genres">Жанры</string>
+    <string name="filters">Фильтры</string>
+    <string name="min_length">Min length 4</string>
+
+    <string-array name="types">
+        <item>Манга</item>
+        <item>Манхва</item>
+        <item>Маньхуа</item>
+        <item>Западный комикс</item>
+        <item>Рукомикс</item>
+    </string-array>
 </resources>

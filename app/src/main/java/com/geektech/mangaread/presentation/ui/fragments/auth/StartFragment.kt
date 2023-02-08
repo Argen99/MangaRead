@@ -1,5 +1,7 @@
 package com.geektech.mangaread.presentation.ui.fragments.auth
 
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.addCallback
 import androidx.core.os.bundleOf
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.mangaread.R
@@ -26,6 +28,10 @@ class StartFragment : BaseFragment<FragmentStartBinding, BaseViewModel>(R.layout
             navigate(R.id.action_startFragment_to_authorizationFragment,
                 bundleOf(AuthorizationFragment.FRAGMENT_KEY to 1))
         }
-    }
 
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner) {
+            requireActivity().finish()
+            return@addCallback
+        }
+    }
 }

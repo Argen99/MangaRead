@@ -15,9 +15,9 @@ import kotlinx.coroutines.launch
 
 abstract class BaseViewModel : ViewModel() {
 
-    protected fun <T> Flow<Resource<T>>.collectFlow(_state: MutableStateFlow<UIState<T>>) {
+    protected fun <T> Flow<Resource<List<T>>>.collectListFlow(_state: MutableStateFlow<UIState<List<T>>>) {
         viewModelScope.launch(Dispatchers.IO) {
-            this@collectFlow.collect {result ->
+            this@collectListFlow.collect { result ->
                 when (result) {
                     is Resource.Loading -> {
                         _state.value = UIState.Loading()
@@ -42,4 +42,24 @@ abstract class BaseViewModel : ViewModel() {
             mappedData(data)
         }
     }.cachedIn(viewModelScope)
+
+    protected fun <T> Flow<Resource<T>>.collectFlow(_state: MutableStateFlow<UIState<T>>) {
+        viewModelScope.launch(Dispatchers.IO) {
+            this@collectFlow.collect { result ->
+                when (result) {
+                    is Resource.Loading -> {
+                        _state.value = UIState.Loading()
+                    }
+                    is Resource.Error -> {
+                        _state.value = UIState.Error(result.message!!)
+                    }
+                    is Resource.Success -> {
+                        if (result.data != null) {
+                            _state.value = UIState.Success(result.data!!)
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

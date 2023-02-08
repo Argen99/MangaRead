@@ -15,4 +15,10 @@ class EditProfileFragment : BaseFragment<FragmentEditProfileBinding,
     override fun initialize() {
 
     }
+
+    override fun setupClickListeners() {
+        binding.btnBack.setOnClickListener {
+            navigateUp()
+        }
+    }
 }

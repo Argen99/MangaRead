@@ -20,7 +20,7 @@ class MangaPagingAdapter(
     )
 
     override fun onBindViewHolder(holder: MangaViewHolder, position: Int) {
-        holder.onBind(getItem(position)!!)
+        getItem(position)?.let { holder.onBind(it) }
     }
 
     inner class MangaViewHolder(private val binding: ItemMangaBinding) :

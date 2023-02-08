@@ -1,8 +1,15 @@
 package com.geektech.mangaread.core.base
 
+import android.animation.ObjectAnimator
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
+import android.view.animation.DecelerateInterpolator
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.animation.doOnEnd
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.viewbinding.ViewBinding
@@ -17,6 +24,8 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
+
         binding = inflateViewBinding(layoutInflater)
         setContentView(binding.root)
 

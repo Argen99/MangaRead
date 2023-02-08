@@ -1,13 +1,7 @@
 package com.geektech.data.remote.mappers
 
-import com.geektech.data.remote.model.MangaResponseDto
-import com.geektech.data.remote.model.MangaResultDto
-import com.geektech.data.remote.model.UserDto
-import com.geektech.data.remote.model.UserRegisterBodyDto
-import com.geektech.domain.model.MangaResponse
-import com.geektech.domain.model.MangaResult
-import com.geektech.domain.model.User
-import com.geektech.domain.model.UserRegisterBody
+import com.geektech.data.remote.model.*
+import com.geektech.domain.model.*
 
 fun MangaResponseDto.toMangaResponse() = MangaResponse(
     count = count,
@@ -49,17 +43,81 @@ fun User.toUserDto() = UserDto(
     message = message
 )
 
-fun UserRegisterBodyDto.toUserRegisterBody() = UserRegisterBody(
+fun MangaCommentsDto.toMangaComments() = MangaComments(
+    id = id,
+    user = user.toMangaAppUser(),
+    text = text,
+)
+
+fun MangaAppUserDto.toMangaAppUser() = MangaAppUser(
+    id = id,
     username = username,
     nickname = nickname,
-    image_file = image_file,
+    image = image,
+    image_file = image_file
+)
+
+fun MangaComments.toMangaCommentsDto() = MangaCommentsDto(
+    id = id,
+    user = user.toMangaAppUserDto(),
+    text = text,
+)
+
+fun MangaAppUser.toMangaAppUserDto() = MangaAppUserDto(
+    id = id,
+    username = username,
+    nickname = nickname,
+    image = image,
+    image_file = image_file
+)
+
+fun LoginResponseDto.toLoginResponse() = LoginResponse(
+    status = status,
+    user = user,
+    access = access,
+    refresh = refresh
+)
+
+fun LoginResponse.toLoginResponseDto() = LoginResponseDto(
+    status = status,
+    user = user,
+    access = access,
+    refresh = refresh
+)
+
+fun LoginRequest.toLoginRequestDto() = LoginRequestDto(
+    username = username,
     password = password
 )
 
-fun UserRegisterBody.toUserRegisterBodyDto() = UserRegisterBodyDto(
+fun LoginRequestDto.toLoginRequest() = LoginRequest(
     username = username,
-    nickname = nickname,
-    image_file = image_file,
     password = password
+)
+
+fun RefreshToken.toRefreshTokenDto() = RefreshTokenDto(
+    access = access
+)
+
+fun RefreshTokenDto.toRefreshToken() = RefreshToken(
+    access = access
+)
+
+fun AddCommentResponseDto.toAddCommentResponse() = AddCommentResponse(
+    text = text
+)
+
+fun AddCommentResponse.toAddCommentResponseDto() = AddCommentResponseDto(
+    text = text
+)
+
+fun GenresDto.toGenres() = Genres(
+    id = id,
+    title = title
+)
+
+fun Genres.toGenresDto() = GenresDto(
+    id = id,
+    title = title
 )
 

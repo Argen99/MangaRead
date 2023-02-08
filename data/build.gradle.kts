@@ -15,6 +15,12 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        kapt {
+            arguments {
+                arg("room.schemaLocation", "$projectDir/schemas")
+            }
+        }
     }
 
     buildTypes {
@@ -42,7 +48,10 @@ dependencies {
     androidTestImplementation(Dependencies.UI.androidTestJunit)
 
     // Inject
-    implementation(Dependencies.Javax.inject)
+    implementation(Dependencies.Koin.koinCore)
+    implementation(Dependencies.Koin.koinAndroid)
+    implementation(Dependencies.Koin.koinTest)
+
 
     // Paging
     implementation(Dependencies.Paging.pagingRuntime)
@@ -50,6 +59,7 @@ dependencies {
     // Retrofit
     implementation(Dependencies.Retrofit.retrofit)
     implementation(Dependencies.Retrofit.retrofitConverterGson)
+    implementation(Dependencies.Retrofit.okHttp)
 
     // Room
     implementation(Dependencies.Room.roomRunTime)
@@ -62,4 +72,5 @@ dependencies {
 
     // Interceptor
     implementation(Dependencies.Interceptor.interceptor)
+    implementation("com.squareup.retrofit2:adapter-rxjava2:2.2.0")
 }

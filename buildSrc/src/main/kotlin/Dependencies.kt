@@ -41,6 +41,9 @@ object Versions {
     // Retrofit
     const val retrofit = "2.9.0"
 
+    // okHttp
+    const val okHttp = "4.2.1"
+
     // Interceptor
     const val interceptor = "5.0.0-alpha.2"
 
@@ -113,6 +116,7 @@ object Dependencies {
     object Retrofit {
         const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
         const val retrofitConverterGson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+        const val okHttp = "com.squareup.okhttp3:okhttp:${Versions.okHttp}"
     }
 
     object Interceptor {

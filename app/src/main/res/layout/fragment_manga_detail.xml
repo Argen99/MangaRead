@@ -7,204 +7,246 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.ui.fragments.main.home.manga_detail.MangaDetailFragment">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_margin="@dimen/dimen_margin_16"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageButton
-                android:id="@+id/btn_back"
-                android:layout_margin="@dimen/dimen_margin_4"
-                style="@style/BaseBackButton"
-                tools:ignore="ContentDescription" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_manga_name"
-                android:text="Название манги"
-                android:textSize="@dimen/dimen_text_24"
-                android:layout_marginStart="@dimen/dimen_margin_10"
-                android:layout_gravity="center"
-                android:textColor="@color/black"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </LinearLayout>
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_manga_image_dt"
-            android:layout_width="match_parent"
-            android:layout_marginHorizontal="@dimen/dimen_margin_16"
-            android:src="@drawable/ic_manga"
-            android:scaleType="centerCrop"
-            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Large"
-            android:layout_height="190dp"/>
-
-        <LinearLayout
             android:orientation="vertical"
-            android:paddingHorizontal="@dimen/dimen_padding_16"
-            android:clipToPadding="false"
-            android:layout_marginTop="@dimen/dimen_margin_30"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textview.MaterialTextView
-                android:text="@string/information"
-                android:textColor="@color/black"
-                android:textSize="@dimen/dimen_text_18"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            android:layout_height="match_parent">
 
             <LinearLayout
-                android:layout_marginTop="@dimen/dimen_margin_8"
+                android:layout_margin="@dimen/dimen_margin_16"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:text="@string/type"
-                    android:textSize="@dimen/dimen_text_18"
-                    android:textColor="@color/dark_gray"
-                    android:layout_height="wrap_content"/>
+                <ImageButton
+                    android:id="@+id/btn_back"
+                    android:layout_margin="@dimen/dimen_margin_4"
+                    style="@style/BaseBackButton"
+                    tools:ignore="ContentDescription" />
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_manga_type_dt"
+                    android:id="@+id/tv_manga_name"
+                    tools:text="Название манги"
+                    android:textSize="@dimen/dimen_text_24"
+                    android:layout_marginStart="@dimen/dimen_margin_10"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
-                    tools:text="Манхва"
-                    android:layout_marginStart="@dimen/dimen_margin_4"
-                    android:textSize="@dimen/dimen_text_18"
-                    android:textColor="@color/dark_gray"
-                    android:layout_height="wrap_content"/>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginTop="@dimen/dimen_margin_4"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:text="@string/genre"
-                    android:textSize="@dimen/dimen_text_18"
-                    android:textColor="@color/dark_gray"
-                    android:layout_height="wrap_content"/>
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_manga_genre_dt"
-                    android:layout_width="wrap_content"
-                    tools:text="Жанр"
-                    android:layout_marginStart="@dimen/dimen_margin_4"
-                    android:textSize="@dimen/dimen_text_18"
-                    android:textColor="@color/dark_gray"
                     android:layout_height="wrap_content"/>
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginTop="@dimen/dimen_margin_4"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:layout_width="wrap_content"
-                    android:text="@string/year"
-                    android:textSize="@dimen/dimen_text_18"
-                    android:textColor="@color/dark_gray"
-                    android:layout_height="wrap_content"/>
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_issue_year_dt"
-                    android:layout_width="wrap_content"
-                    tools:text="2000"
-                    android:textSize="@dimen/dimen_text_18"
-                    android:layout_marginStart="@dimen/dimen_margin_4"
-                    android:textColor="@color/dark_gray"
-                    android:layout_height="wrap_content"/>
-
-            </LinearLayout>
-
-            <com.google.android.material.textview.MaterialTextView
-                android:layout_width="wrap_content"
-                android:text="@string/synopsis"
-                android:textColor="@color/black"
-                android:layout_marginTop="@dimen/dimen_margin_40"
-                android:textSize="@dimen/dimen_text_18"
-                android:layout_height="wrap_content"/>
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_synopsis"
-                android:layout_marginTop="@dimen/dimen_margin_4"
-                android:layout_width="wrap_content"
-                android:textSize="@dimen/dimen_text_14"
-                android:textColor="@color/dark_gray"
-                android:maxLines="7"
-                android:ellipsize="marquee"
-                tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
-                android:layout_height="wrap_content"/>
-
-            <View
-                android:id="@+id/gradient"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_marginTop="-20dp"
-                android:background="@drawable/bg_gradient"/>
-
-            <TextView
-                android:id="@+id/tv_read_more"
-                android:text="@string/read_more"
-                android:textSize="@dimen/dimen_text_14"
-                android:textColor="@color/purple"
-                android:textAllCaps="true"
-                android:layout_marginTop="@dimen/dimen_margin_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
 
             <FrameLayout
-                android:layout_marginTop="@dimen/dimen_margin_20"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/tv_comments"
-                    android:text="@string/comments"
-                    android:textColor="@color/black"
-                    android:layout_gravity="center"
-                    android:textSize="@dimen/dimen_text_24"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_manga_image_dt"
+                    android:layout_width="match_parent"
+                    android:layout_marginHorizontal="@dimen/dimen_margin_16"
+                    tools:src="@drawable/ic_manga"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Large"
+                    android:layout_height="190dp"/>
 
-                <com.google.android.material.textview.MaterialTextView
-                    android:text="@string/add_comment"
-                    android:textColor="@color/purple"
-                    android:layout_marginEnd="@dimen/dimen_margin_16"
-                    android:textAllCaps="true"
-                    android:layout_gravity="end|center_vertical"
-                    android:textSize="@dimen/dimen_text_14"
+                <ProgressBar
+                    android:id="@+id/progress_bar_mdf"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    android:indeterminateTint="@color/purple"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
 
             </FrameLayout>
 
+            <LinearLayout
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/dimen_padding_16"
+                android:clipToPadding="false"
+                android:layout_marginTop="@dimen/dimen_margin_30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:text="@string/information"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dimen_text_18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/dimen_margin_8"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:text="@string/type"
+                        android:textSize="@dimen/dimen_text_18"
+                        android:textColor="@color/dark_gray"
+                        android:layout_height="wrap_content"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_manga_type_dt"
+                        android:layout_width="wrap_content"
+                        tools:text="Манхва"
+                        android:layout_marginStart="@dimen/dimen_margin_4"
+                        android:textSize="@dimen/dimen_text_18"
+                        android:textColor="@color/dark_gray"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/dimen_margin_4"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:text="@string/genre"
+                        android:textSize="@dimen/dimen_text_18"
+                        android:textColor="@color/dark_gray"
+                        android:layout_height="wrap_content"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_manga_genre_dt"
+                        android:layout_width="wrap_content"
+                        tools:text="Жанр"
+                        android:layout_marginStart="@dimen/dimen_margin_4"
+                        android:textSize="@dimen/dimen_text_18"
+                        android:textColor="@color/dark_gray"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/dimen_margin_4"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:text="@string/year"
+                        android:textSize="@dimen/dimen_text_18"
+                        android:textColor="@color/dark_gray"
+                        android:layout_height="wrap_content"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_issue_year_dt"
+                        android:layout_width="wrap_content"
+                        tools:text="2000"
+                        android:textSize="@dimen/dimen_text_18"
+                        android:layout_marginStart="@dimen/dimen_margin_4"
+                        android:textColor="@color/dark_gray"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/synopsis"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="@dimen/dimen_margin_40"
+                    android:textSize="@dimen/dimen_text_18"
+                    android:layout_height="wrap_content"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_synopsis"
+                    android:layout_marginTop="@dimen/dimen_margin_4"
+                    android:layout_width="wrap_content"
+                    android:textSize="@dimen/dimen_text_14"
+                    android:textColor="@color/dark_gray"
+                    android:maxLines="7"
+                    android:ellipsize="marquee"
+                    tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. "
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:id="@+id/gradient_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="-20dp"
+                    android:background="@drawable/bg_gradient"/>
+
+                <TextView
+                    android:id="@+id/tv_read_more"
+                    android:text="@string/read_more"
+                    android:textSize="@dimen/dimen_text_14"
+                    android:textColor="@color/purple"
+                    android:textAllCaps="true"
+                    android:layout_marginTop="@dimen/dimen_margin_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <EditText
+                    android:id="@+id/et_add_comment"
+                    android:visibility="gone"
+                    android:layout_marginHorizontal="@dimen/dimen_margin_16"
+                    android:textSize="@dimen/dimen_text_18"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <FrameLayout
+                    android:layout_marginTop="@dimen/dimen_margin_20"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_comments"
+                        android:text="@string/comments"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center"
+                        android:textSize="@dimen/dimen_text_24"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_add_comment"
+                        android:text="@string/add_comment"
+                        android:textColor="@color/purple"
+                        android:layout_marginEnd="@dimen/dimen_margin_16"
+                        android:textAllCaps="true"
+                        android:layout_gravity="end|center_vertical"
+                        android:textSize="@dimen/dimen_text_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_comments"
+                android:visibility="visible"
+                android:paddingHorizontal="@dimen/dimen_padding_16"
+                android:paddingBottom="@dimen/dimen_padding_10"
+                android:clipToPadding="false"
+                android:layout_marginTop="@dimen/dimen_margin_20"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <TextView
+                android:id="@+id/tv_no_reviews"
+                android:visibility="gone"
+                android:layout_marginVertical="@dimen/dimen_margin_20"
+                android:text="@string/no_reviews"
+                android:textSize="@dimen/dimen_text_18"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:ignore="HardcodedText" />
+
         </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_comments"
-            android:paddingHorizontal="@dimen/dimen_padding_16"
-            android:paddingBottom="@dimen/dimen_padding_10"
-            android:clipToPadding="false"
-            android:layout_marginTop="@dimen/dimen_margin_20"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>

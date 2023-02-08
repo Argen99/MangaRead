@@ -93,7 +93,11 @@ dependencies {
     // Retrofit
     implementation(Dependencies.Retrofit.retrofit)
     implementation(Dependencies.Retrofit.retrofitConverterGson)
+    implementation(Dependencies.Retrofit.okHttp)
+    //
 
     // Interceptor
     implementation(Dependencies.Interceptor.interceptor)
+    implementation("androidx.core:core-splashscreen:1.0.0")
+
 }

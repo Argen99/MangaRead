@@ -1,5 +1,7 @@
 package com.geektech.mangaread.presentation.ui.fragments.auth.authorization
 
+import androidx.core.os.bundleOf
+import androidx.fragment.app.findFragment
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.mangaread.R
@@ -23,7 +25,7 @@ class AuthorizationFragment : BaseFragment<FragmentAuthorizationBinding,
 
         fragmentAdapter = AuthorizationPagerAdapter(requireActivity())
         fragmentAdapter.addFragment(SignInFragment(this::btnLogin), getString(R.string.login))
-        fragmentAdapter.addFragment(SignUpFragment(), getString(R.string.btn_txt_registration))
+        fragmentAdapter.addFragment(SignUpFragment(this::btnLogin), getString(R.string.btn_txt_registration))
         binding.pagerAuth.adapter = fragmentAdapter
         binding.pagerAuth.post {
             binding.pagerAuth.setCurrentItem(currentItemIndex, false)

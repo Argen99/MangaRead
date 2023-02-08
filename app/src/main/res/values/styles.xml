@@ -38,4 +38,27 @@
         <item name="android:src">@drawable/ic_back</item>
     </style>
 
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_image_manga</item>
+        <item name="postSplashScreenTheme">@style/Theme.MangaRead</item>
+    </style>
+
+    <style name="BaseProgressBar" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="layout_constraintStart_toStartOf">parent</item>
+        <item name="layout_constraintEnd_toEndOf">parent</item>
+        <item name="layout_constraintTop_toTopOf">parent</item>
+        <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="android:indeterminateTint">@color/purple</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="BaseCheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:paddingHorizontal" tools:targetApi="o">@dimen/dimen_padding_16</item>
+        <item name="android:button">@drawable/bg_custom_checkbox</item>
+    </style>
+
 </resources>
