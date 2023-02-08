@@ -156,7 +156,7 @@ class MangaDetailFragment() : BaseFragment<FragmentMangaDetailBinding,
                 }
             }
         }
-        binding.tvMangaGenreDt.text = genresOfTheCurrentManga.toString()
+        binding.tvMangaGenreDt.text = genresOfTheCurrentManga.joinToString()
     }
 
     private fun checkData(it: List<MangaComments>) {
