@@ -11,11 +11,13 @@ import com.geektech.mangaread.presentation.ui.adapters.MangaPagingAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AllMangaFragment(private val openMangaDetails: (id: String) -> Unit) :
-    BaseFragment<FragmentAllMangaBinding, AllMangaViewModel>(R.layout.fragment_all_manga)
-, DataSendClass.SearchBy {
+    BaseFragment<FragmentAllMangaBinding, AllMangaViewModel>(R.layout.fragment_all_manga),
+    DataSendClass.SearchBy {
 
     override val binding by viewBinding(FragmentAllMangaBinding::bind)
     override val viewModel by viewModel<AllMangaViewModel>()
+
+    private var sortByYear: SortByIssueYear? = null
 
     private val mangaAdapter: MangaPagingAdapter by lazy {
         MangaPagingAdapter(this::onItemClick)
@@ -51,6 +53,10 @@ class AllMangaFragment(private val openMangaDetails: (id: String) -> Unit) :
         genres: List<String>?,
         sortByIssueYear: SortByIssueYear?
     ) {
+        sortByYear = sortByIssueYear
 
+        viewModel.getManga(type = types, genreTitle = genres).spectatePaging { data ->
+            mangaAdapter.submitData(data)
+        }
     }
 }
