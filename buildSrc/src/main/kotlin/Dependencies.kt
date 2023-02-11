@@ -51,6 +51,9 @@ object Versions {
     const val AGP = "7.2.2"
     // Kotlin
     const val kotlin = "1.7.10"
+
+    // SplashScreen
+    const val splashScreen = "1.0.0"
 }
 
 object Dependencies {
@@ -125,6 +128,10 @@ object Dependencies {
 
     object Javax {
         const val inject = "javax.inject:javax.inject:1"
+    }
+
+    object SplashScreen {
+        const val splashScreen = "androidx.core:core-splashscreen:${Versions.splashScreen}"
     }
 }
 

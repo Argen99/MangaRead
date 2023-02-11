@@ -98,6 +98,6 @@ dependencies {
 
     // Interceptor
     implementation(Dependencies.Interceptor.interceptor)
-    implementation("androidx.core:core-splashscreen:1.0.0")
+    implementation(Dependencies.SplashScreen.splashScreen)
 
 }

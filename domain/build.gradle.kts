@@ -10,7 +10,7 @@ java {
 dependencies {
     implementation(Dependencies.Coroutines.core)
     implementation(Dependencies.Javax.inject)
-    implementation("androidx.paging:paging-common-ktx:3.1.1")
+    implementation(Dependencies.Paging.pagingCommon)
     implementation(Dependencies.Retrofit.retrofit)
 
 }

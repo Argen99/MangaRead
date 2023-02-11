@@ -72,5 +72,4 @@ dependencies {
 
     // Interceptor
     implementation(Dependencies.Interceptor.interceptor)
-    implementation("com.squareup.retrofit2:adapter-rxjava2:2.2.0")
 }
