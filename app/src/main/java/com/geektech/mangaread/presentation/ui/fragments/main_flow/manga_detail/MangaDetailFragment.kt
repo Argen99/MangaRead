@@ -1,4 +1,4 @@
-package com.geektech.mangaread.presentation.ui.fragments.main_flow.home.manga_detail
+package com.geektech.mangaread.presentation.ui.fragments.main_flow.manga_detail
 
 import android.annotation.SuppressLint
 import android.content.Context

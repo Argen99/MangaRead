@@ -1,4 +1,4 @@
-package com.geektech.mangaread.presentation.ui.fragments.main_flow.home.main
+package com.geektech.mangaread.presentation.ui.fragments.main_flow.main
 
 import com.geektech.domain.model.Genres
 import com.geektech.domain.use_cases.main.GetGenresUseCase

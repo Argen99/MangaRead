@@ -1,4 +1,4 @@
-package com.geektech.mangaread.presentation.ui.fragments.main_flow.home.main
+package com.geektech.mangaread.presentation.ui.fragments.main_flow.main
 
 import android.app.Dialog
 import android.view.Gravity
@@ -19,8 +19,8 @@ import com.geektech.mangaread.databinding.GenreLayoutBinding
 import com.geektech.mangaread.presentation.ui.adapters.GenreAdapter
 import com.geektech.mangaread.presentation.ui.adapters.MainPagerAdapter
 import com.geektech.mangaread.presentation.ui.adapters.TypesAdapter
-import com.geektech.mangaread.presentation.ui.fragments.main_flow.home.main.all_manga.AllMangaFragment
-import com.geektech.mangaread.presentation.ui.fragments.main_flow.home.main.top_manga.TopMangaFragment
+import com.geektech.mangaread.presentation.ui.fragments.main_flow.main.all_manga.AllMangaFragment
+import com.geektech.mangaread.presentation.ui.fragments.main_flow.main.top_manga.TopMangaFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

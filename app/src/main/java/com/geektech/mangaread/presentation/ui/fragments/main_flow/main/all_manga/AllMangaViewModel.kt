@@ -1,4 +1,4 @@
-package com.geektech.mangaread.presentation.ui.fragments.main_flow.home.main.all_manga
+package com.geektech.mangaread.presentation.ui.fragments.main_flow.main.all_manga
 
 import com.geektech.domain.use_cases.main.GetAllMangaUseCase
 import com.geektech.mangaread.core.base.BaseViewModel

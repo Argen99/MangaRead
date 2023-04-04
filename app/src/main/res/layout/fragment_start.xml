@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_bg_start_fragment"
-    tools:context=".presentation.ui.fragments.auth_flow.StartFragment">
+    tools:context=".presentation.ui.fragments.auth_flow.start.StartFragment">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:layout_width="190dp"

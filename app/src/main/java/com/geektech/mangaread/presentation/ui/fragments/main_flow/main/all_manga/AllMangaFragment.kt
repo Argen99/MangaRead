@@ -1,4 +1,4 @@
-package com.geektech.mangaread.presentation.ui.fragments.main_flow.home.main.all_manga
+package com.geektech.mangaread.presentation.ui.fragments.main_flow.main.all_manga
 
 import androidx.recyclerview.widget.GridLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding

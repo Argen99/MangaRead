@@ -1,4 +1,4 @@
-package com.geektech.mangaread.presentation.ui.fragments.main_flow.home.main.top_manga
+package com.geektech.mangaread.presentation.ui.fragments.main_flow.main.top_manga
 
 import com.geektech.domain.model.MangaResult
 import com.geektech.domain.use_cases.main.GetTopMangaUseCase

@@ -1,4 +1,4 @@
-package com.geektech.mangaread.presentation.ui.fragments.auth_flow
+package com.geektech.mangaread.presentation.ui.fragments.auth_flow.start
 
 import androidx.activity.addCallback
 import androidx.core.os.bundleOf
