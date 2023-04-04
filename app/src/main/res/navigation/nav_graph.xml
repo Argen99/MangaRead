@@ -2,81 +2,27 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/mainFragment">
+    android:id="@+id/nav_graph">
+
+    <action
+        android:id="@+id/action_global_authFlowFragment"
+        app:destination="@id/authFlowFragment"
+        app:popUpTo="@id/nav_graph" />
+
+    <action
+        android:id="@+id/action_global_mainFlowFragment"
+        app:destination="@id/mainFlowFragment"
+        app:popUpTo="@id/nav_graph" />
 
     <fragment
-        android:id="@+id/authorizationFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.auth_flow.authorization.AuthorizationFragment"
-        android:label="fragment_authorization"
-        tools:layout="@layout/fragment_authorization" >
-        <action
-            android:id="@+id/action_authorizationFragment_to_mainFragment"
-            app:popUpTo="@id/nav_graph.xml"
-            app:popUpToInclusive="true"
-            app:destination="@id/mainFragment" />
-    </fragment>
-
+        android:id="@+id/mainFlowFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.main_flow.MainFlowFragment"
+        android:label="fragment_main_flow"
+        tools:layout="@layout/fragment_main_flow" />
     <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.main_flow.main.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
-        <action
-            android:id="@+id/action_mainFragment_to_mangaDetailFragment"
-            app:destination="@id/mangaDetailFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/mangaDetailFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.main_flow.manga_detail.MangaDetailFragment"
-        android:label="fragment_manga_detail"
-        tools:layout="@layout/fragment_manga_detail" >
-        <action
-            android:id="@+id/action_mangaDetailFragment_to_mangaCommentsFragment"
-            app:destination="@id/mangaCommentsFragment" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/mangaCommentsFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.main_flow.manga_detail.comments.MangaCommentsFragment"
-        android:label="fragment_manga_comments"
-        tools:layout="@layout/fragment_manga_comments" />
-
-    <fragment
-        android:id="@+id/allMangaFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.main_flow.main.all_manga.AllMangaFragment"
-        android:label="fragment_all_manga"
-        tools:layout="@layout/fragment_all_manga" />
-
-    <fragment
-        android:id="@+id/popularMangaFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.main_flow.main.top_manga.TopMangaFragment"
-        android:label="fragment_popular_manga"
-        tools:layout="@layout/fragment_top_manga" />
-
-    <fragment
-        android:id="@+id/signInFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.auth_flow.sign_in.SignInFragment"
-        android:label="fragment_sign_in"
-        tools:layout="@layout/fragment_sign_in" />
-
-    <fragment
-        android:id="@+id/signUpFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.auth_flow.sign_up.SignUpFragment"
-        android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" />
-
-    <fragment
-        android:id="@+id/startFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.auth_flow.start.StartFragment"
-        android:label="fragment_start"
-        tools:layout="@layout/fragment_start" >
-        <action
-            android:id="@+id/action_startFragment_to_authorizationFragment"
-            app:popUpTo="@id/nav_graph.xml"
-            app:popUpToInclusive="true"
-            app:destination="@id/authorizationFragment" />
-    </fragment>
+        android:id="@+id/authFlowFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.auth_flow.AuthFlowFragment"
+        android:label="fragment_auth_flow"
+        tools:layout="@layout/fragment_auth_flow" />
 
 </navigation>

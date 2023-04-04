@@ -3,6 +3,7 @@ package com.geektech.mangaread.presentation.ui.fragments.main_flow.manga_detail.
 import android.annotation.SuppressLint
 import android.content.Context.INPUT_METHOD_SERVICE
 import android.view.inputmethod.InputMethodManager
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.domain.model.MangaComments
@@ -53,7 +54,7 @@ class MangaCommentsFragment : BaseFragment<FragmentMangaCommentsBinding,
         }
 
         binding.btnBack.setOnClickListener {
-            navigateUp()
+            findNavController().navigateUp()
         }
     }
 

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.view.inputmethod.InputMethodManager
 import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.domain.model.Genres
@@ -11,10 +12,7 @@ import com.geektech.domain.model.MangaComments
 import com.geektech.domain.model.MangaResult
 import com.geektech.mangaread.R
 import com.geektech.mangaread.core.base.BaseFragment
-import com.geektech.mangaread.core.extensions.gone
-import com.geektech.mangaread.core.extensions.loadImage
-import com.geektech.mangaread.core.extensions.showToast
-import com.geektech.mangaread.core.extensions.visible
+import com.geektech.mangaread.core.extensions.*
 import com.geektech.mangaread.core.utils.Constants
 import com.geektech.mangaread.databinding.FragmentMangaDetailBinding
 import com.geektech.mangaread.presentation.ui.adapters.CommentsAdapter
@@ -100,7 +98,7 @@ class MangaDetailFragment() : BaseFragment<FragmentMangaDetailBinding,
         }
 
         binding.btnBack.setOnClickListener {
-           navigateUp()
+           findNavController().navigateUp()
         }
     }
 
@@ -135,10 +133,12 @@ class MangaDetailFragment() : BaseFragment<FragmentMangaDetailBinding,
     }
 
     private fun onItemClick(position: Int) {
-        navigate(
-            R.id.action_mangaDetailFragment_to_mangaCommentsFragment,
-            bundleOf(Constants.ID_MDF_MCF to mangaId)
-        )
+//        navigate(
+//            R.id.action_mangaDetailFragment_to_mangaCommentsFragment,
+//            bundleOf(Constants.ID_MDF_MCF to mangaId)
+//        )
+        findNavController().navigateSafely(R.id.action_mangaDetailFragment_to_mangaCommentsFragment,
+            bundleOf(Constants.ID_MDF_MCF to mangaId))
     }
 
     private fun setDetails(model: MangaResult) {

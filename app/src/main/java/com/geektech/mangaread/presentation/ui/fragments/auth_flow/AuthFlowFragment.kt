@@ -4,5 +4,5 @@ import com.geektech.mangaread.R
 import com.geektech.mangaread.core.base.BaseFlowFragment
 
 class AuthFlowFragment :
-    BaseFlowFragment(R.layout.fragment_sign_flow, R.id.nav_host_fragment_sign) {
+    BaseFlowFragment(R.layout.fragment_auth_flow, R.id.nav_host_fragment_sign) {
 }

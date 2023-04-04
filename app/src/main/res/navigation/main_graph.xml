@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph.xml"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.main_flow.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_mangaDetailFragment"
+            app:destination="@id/mangaDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mangaDetailFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.main_flow.manga_detail.MangaDetailFragment"
+        android:label="fragment_manga_detail"
+        tools:layout="@layout/fragment_manga_detail" >
+        <action
+            android:id="@+id/action_mangaDetailFragment_to_mangaCommentsFragment"
+            app:destination="@id/mangaCommentsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mangaCommentsFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.main_flow.manga_detail.comments.MangaCommentsFragment"
+        android:label="fragment_manga_comments"
+        tools:layout="@layout/fragment_manga_comments" />
+</navigation>

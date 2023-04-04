@@ -5,6 +5,8 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.mangaread.R
 import com.geektech.mangaread.databinding.FragmentAuthorizationBinding
 import com.geektech.mangaread.core.base.BaseFragment
+import com.geektech.mangaread.core.extensions.activityNavController
+import com.geektech.mangaread.core.extensions.navigateSafely
 import com.geektech.mangaread.presentation.ui.adapters.AuthorizationPagerAdapter
 import com.geektech.mangaread.presentation.ui.fragments.auth_flow.sign_in.SignInFragment
 import com.geektech.mangaread.presentation.ui.fragments.auth_flow.sign_up.SignUpFragment
@@ -34,8 +36,8 @@ class AuthorizationFragment : BaseFragment<FragmentAuthorizationBinding,
         }.attach()
     }
 
-    private fun btnLogin(){
-        navigate(R.id.action_authorizationFragment_to_mainFragment)
+    private fun btnLogin() {
+        activityNavController().navigateSafely(R.id.action_global_mainFlowFragment)
     }
 
     companion object {

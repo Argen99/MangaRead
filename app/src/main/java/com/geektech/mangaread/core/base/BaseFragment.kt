@@ -27,13 +27,9 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
 
     protected abstract val binding: Binding
     protected abstract val viewModel: ViewModel
-    private var _navController: NavController? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val navHostFragment = activity?.supportFragmentManager?.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        _navController = navHostFragment.navController
 
         checkInternetConnection()
         initViewModel()
@@ -53,14 +49,6 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
     protected open fun setupRequest() {}
     protected open fun setupObservers() {}
     protected open fun setupClickListeners() {}
-
-    protected fun navigate(direction: Int, data: Bundle? = null) {
-        _navController?.navigate(direction, data)
-    }
-
-    protected fun navigateUp() {
-        _navController?.navigateUp()
-    }
 
     protected fun <T> StateFlow<UIState<T>>.collectState(
         onLoading: () -> Unit,

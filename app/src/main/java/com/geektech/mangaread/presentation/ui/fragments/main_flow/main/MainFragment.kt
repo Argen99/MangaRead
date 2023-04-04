@@ -5,11 +5,13 @@ import android.view.Gravity
 import android.view.WindowManager
 import androidx.core.os.bundleOf
 import androidx.core.widget.addTextChangedListener
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.domain.model.Genres
 import com.geektech.domain.model.SortByIssueYear
 import com.geektech.mangaread.R
 import com.geektech.mangaread.core.base.BaseFragment
+import com.geektech.mangaread.core.extensions.navigateSafely
 import com.geektech.mangaread.core.extensions.showToast
 import com.geektech.mangaread.core.utils.Constants
 import com.geektech.mangaread.core.utils.DataSendClass
@@ -170,9 +172,7 @@ class MainFragment() : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout
     }
 
     private fun openMangaDetails(id: String) {
-        navigate(
-            R.id.action_mainFragment_to_mangaDetailFragment,
-            bundleOf(Constants.MANGA_ID_KEY to id)
-        )
+        findNavController().navigateSafely(R.id.action_mainFragment_to_mangaDetailFragment,
+            bundleOf(Constants.MANGA_ID_KEY to id))
     }
 }
