@@ -1,13 +1,13 @@
 package com.geektech.mangaread.di
 
-import com.geektech.mangaread.presentation.ui.fragments.auth.sign_in.SignInViewModel
-import com.geektech.mangaread.presentation.ui.fragments.auth.sign_up.SignUpViewModel
-import com.geektech.mangaread.presentation.ui.fragments.main.home.main.MainViewModel
-import com.geektech.mangaread.presentation.ui.fragments.main.home.main.all_manga.AllMangaViewModel
-import com.geektech.mangaread.presentation.ui.fragments.main.home.main.top_manga.TopMangaViewModel
-import com.geektech.mangaread.presentation.ui.fragments.main.home.manga_detail.MangaDetailViewModel
-import com.geektech.mangaread.presentation.ui.fragments.main.home.manga_detail.comments.MangaCommentsViewModel
-import com.geektech.mangaread.presentation.ui.fragments.main.profile.ProfileViewModel
+import com.geektech.mangaread.presentation.ui.fragments.auth_flow.sign_in.SignInViewModel
+import com.geektech.mangaread.presentation.ui.fragments.auth_flow.sign_up.SignUpViewModel
+import com.geektech.mangaread.presentation.ui.fragments.main_flow.home.main.MainViewModel
+import com.geektech.mangaread.presentation.ui.fragments.main_flow.home.main.all_manga.AllMangaViewModel
+import com.geektech.mangaread.presentation.ui.fragments.main_flow.home.main.top_manga.TopMangaViewModel
+import com.geektech.mangaread.presentation.ui.fragments.main_flow.home.manga_detail.MangaDetailViewModel
+import com.geektech.mangaread.presentation.ui.fragments.main_flow.home.manga_detail.comments.MangaCommentsViewModel
+import com.geektech.mangaread.presentation.ui.fragments.main_flow.profile.ProfileViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

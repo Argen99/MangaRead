@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".presentation.ui.fragments.main.home.manga_detail.comments.MangaCommentsFragment">
+    tools:context=".presentation.ui.fragments.main_flow.home.manga_detail.comments.MangaCommentsFragment">
 
     <FrameLayout
         android:id="@+id/title_layout"

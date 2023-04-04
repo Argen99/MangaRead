@@ -8,7 +8,6 @@ import okhttp3.ResponseBody
 import okhttp3.ResponseBody.Companion.toResponseBody
 import java.net.ProtocolException
 
-
 class AuthInterceptor(
     private val tokenManager: TokenManager) : Interceptor {
 

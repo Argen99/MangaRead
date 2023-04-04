@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/authorizationFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.auth.authorization.AuthorizationFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.auth_flow.authorization.AuthorizationFragment"
         android:label="fragment_authorization"
         tools:layout="@layout/fragment_authorization" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.main.home.main.MainFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.main_flow.home.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -27,7 +27,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.main.profile.ProfileFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.main_flow.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
@@ -41,12 +41,12 @@
     </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.main.profile.edit_profile.EditProfileFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.main_flow.profile.edit_profile.EditProfileFragment"
         android:label="fragment_edit_profile"
         tools:layout="@layout/fragment_edit_profile" />
     <fragment
         android:id="@+id/mangaDetailFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.main.home.manga_detail.MangaDetailFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.main_flow.home.manga_detail.MangaDetailFragment"
         android:label="fragment_manga_detail"
         tools:layout="@layout/fragment_manga_detail" >
         <action
@@ -55,32 +55,32 @@
     </fragment>
     <fragment
         android:id="@+id/mangaCommentsFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.main.home.manga_detail.comments.MangaCommentsFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.main_flow.home.manga_detail.comments.MangaCommentsFragment"
         android:label="fragment_manga_comments"
         tools:layout="@layout/fragment_manga_comments" />
     <fragment
         android:id="@+id/allMangaFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.main.home.main.all_manga.AllMangaFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.main_flow.home.main.all_manga.AllMangaFragment"
         android:label="fragment_all_manga"
         tools:layout="@layout/fragment_all_manga" />
     <fragment
         android:id="@+id/popularMangaFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.main.home.main.top_manga.TopMangaFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.main_flow.home.main.top_manga.TopMangaFragment"
         android:label="fragment_popular_manga"
         tools:layout="@layout/fragment_top_manga" />
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.auth.sign_in.SignInFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.auth_flow.sign_in.SignInFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in" />
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.auth.sign_up.SignUpFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.auth_flow.sign_up.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" />
     <fragment
         android:id="@+id/startFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.auth.StartFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.auth_flow.StartFragment"
         android:label="fragment_start"
         tools:layout="@layout/fragment_start" >
         <action

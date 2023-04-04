@@ -24,9 +24,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     override fun userVerification() {
-        if (tokenManager.getAccessToken() == null) {
-            navController.navigate(R.id.startFragment)
-        }
+//        if (tokenManager.getAccessToken() == null) {
+//            navController.navigate(R.id.startFragment)
+//        }
     }
 
     override fun addOnDestinationChangedListener() {

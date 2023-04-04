@@ -1,6 +1,6 @@
 package com.geektech.mangaread.di
 
-import com.geektech.data.BuildConfig
+import com.geektech.data.BuildConfig.BASE_URL
 import com.geektech.data.local_db.prefs.TokenManager
 import com.geektech.data.remote.api_service.AuthApiService
 import com.geektech.data.remote.api_service.MangaReadApiService
@@ -8,6 +8,7 @@ import com.geektech.data.remote.retrofit.AuthAuthenticator
 import com.geektech.data.remote.retrofit.AuthInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.android.BuildConfig
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -26,7 +27,7 @@ val networkModule = module {
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
 
         Retrofit.Builder()
-            .baseUrl(BuildConfig.BASE_URL)
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(
                 OkHttpClient().newBuilder()
@@ -45,7 +46,7 @@ val networkModule = module {
 
 fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
     return Retrofit.Builder()
-        .baseUrl(BuildConfig.BASE_URL)
+        .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .client(okHttpClient)
         .build()

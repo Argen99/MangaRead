@@ -1,6 +1,5 @@
 package com.geektech.data.local_db.prefs
 
-import android.annotation.SuppressLint
 import android.content.Context
 
 class TokenManager (context: Context) {

@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_height="wrap_content"
     android:clipToPadding="false"
-    tools:context=".presentation.ui.fragments.main.profile.edit_profile.EditProfileFragment">
+    tools:context=".presentation.ui.fragments.main_flow.profile.edit_profile.EditProfileFragment">
 
     <LinearLayout
         android:orientation="vertical"
