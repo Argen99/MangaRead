@@ -4,10 +4,10 @@ import com.geektech.domain.model.AddCommentResponse
 import com.geektech.domain.model.Genres
 import com.geektech.domain.model.MangaComments
 import com.geektech.domain.model.MangaResult
-import com.geektech.domain.use_cases.auth.AddCommentUseCase
+import com.geektech.domain.use_cases.comment.AddCommentUseCase
 import com.geektech.domain.use_cases.main.GetGenresUseCase
-import com.geektech.domain.use_cases.main.GetMangaCommentsUseCase
-import com.geektech.domain.use_cases.main.GetMangaByIdUseCase
+import com.geektech.domain.use_cases.comment.GetMangaCommentsUseCase
+import com.geektech.domain.use_cases.manga.GetMangaByIdUseCase
 import com.geektech.mangaread.core.base.BaseViewModel
 import com.geektech.mangaread.core.ui_state.UIState
 import kotlinx.coroutines.flow.MutableStateFlow

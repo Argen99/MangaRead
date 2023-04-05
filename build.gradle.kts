@@ -4,6 +4,7 @@ plugins {
     id (Plugins.AGP.library) version Versions.AGP apply false
     id (Plugins.Kotlin.kotlin) version Versions.kotlin apply false
     id (Plugins.Kotlin.jvm) version Versions.kotlin apply false
+    id (Plugins.NavSafeArgs.navSafeArgs) version Versions.navigationComponent apply false
 }
 
 //task clean(type: Delete) {

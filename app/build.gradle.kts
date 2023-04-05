@@ -2,6 +2,7 @@ plugins {
     id(Plugins.AGP.application)
     id(Plugins.Kotlin.kotlin)
     id(Plugins.Kotlin.kotlinKapt)
+    id(Plugins.NavSafeArgs.navSafeArgs)
 }
 
 android {

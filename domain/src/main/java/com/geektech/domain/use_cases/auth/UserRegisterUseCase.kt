@@ -1,19 +1,18 @@
-package com.geektech.domain.use_cases.main
+package com.geektech.domain.use_cases.auth
 
+import com.geektech.domain.repositories.AuthRepository
 import com.geektech.domain.repositories.MainRepository
 import okhttp3.RequestBody
 
 class UserRegisterUseCase(
-    private val repository: MainRepository
+    private val repository: AuthRepository
 ) {
     operator fun invoke(
         username: RequestBody,
         nickname: RequestBody,
         imageFile: RequestBody,
-        password: RequestBody,
-        imageUri: String
+        password: RequestBody
     ) = repository.userRegister(
         username = username, nickname = nickname,
-        imageFile = imageFile, password = password,
-        imageUri = imageUri)
+        imageFile = imageFile, password = password)
 }

@@ -3,12 +3,12 @@ package com.geektech.data.remote.paging_source
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.geektech.data.core.utils.Constants
-import com.geektech.data.remote.api_service.MangaReadApiService
-import com.geektech.data.remote.mappers.toMangaResult
+import com.geektech.data.remote.api_service.MangaApiService
+import com.geektech.data.remote.mappers.toModel
 import com.geektech.domain.model.MangaResult
 
 class MangaPagingSource(
-    private val apiService: MangaReadApiService,
+    private val apiService: MangaApiService,
     private val type: List<String>? = null,
     private val genreTitle: List<String>?= null,
     private val en_name: String?= null,
@@ -25,7 +25,7 @@ class MangaPagingSource(
                 limit = params.loadSize, offset = pageIndex, type,
                 genreTitle, en_name, ru_name, search)
 
-            val data = response.results.map { it.toMangaResult() }
+            val data = response.results.map { it.toModel() }
             val nextPageNumber = if (data.size == params.loadSize)
                 pageIndex + params.loadSize / Constants.NETWORK_PAGE_SIZE
             else

@@ -15,8 +15,7 @@ val appModule = module {
     viewModel<SignUpViewModel> {
         SignUpViewModel(
             registerUserUseCase = get(),
-            userLoginUseCase = get(),
-            roomRepository = get()
+            userLoginUseCase = get()
         )
     }
 

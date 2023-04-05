@@ -2,7 +2,7 @@ package com.geektech.mangaread.presentation.ui.fragments.auth_flow.sign_in
 
 import com.geektech.domain.model.LoginRequest
 import com.geektech.domain.model.LoginResponse
-import com.geektech.domain.use_cases.main.UserLoginUseCase
+import com.geektech.domain.use_cases.auth.UserLoginUseCase
 import com.geektech.mangaread.core.base.BaseViewModel
 import com.geektech.mangaread.core.ui_state.UIState
 import kotlinx.coroutines.flow.MutableStateFlow

@@ -1,19 +1,12 @@
 package com.geektech.data.remote.retrofit
 
-import com.geektech.data.BuildConfig.BASE_URL
 import com.geektech.data.local_db.prefs.TokenManager
-import com.geektech.data.remote.api_service.MangaReadApiService
-import com.geektech.data.remote.model.RefreshTokenDto
-import com.geektech.domain.model.LoginResponse
-import com.geektech.domain.model.RefreshToken
+import com.geektech.data.remote.api_service.MainApiService
 import kotlinx.coroutines.runBlocking
 import okhttp3.*
-import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class AuthAuthenticator(
-    private val apiService: MangaReadApiService,
+    private val apiService: MainApiService,
     private val tokenManager: TokenManager,
 ): Authenticator {
 

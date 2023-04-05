@@ -22,6 +22,7 @@ import com.geektech.mangaread.core.extensions.gone
 import com.geektech.mangaread.core.extensions.loadImage
 import com.geektech.mangaread.core.extensions.showToast
 import com.geektech.mangaread.core.extensions.visible
+import com.geektech.mangaread.core.utils.Constants.READ_EXTERNAL_STORAGE_REQUEST_CODE
 import com.geektech.mangaread.core.utils.RealPathUtil
 import com.geektech.mangaread.databinding.FragmentSignUpBinding
 import com.google.android.material.tabs.TabLayout
@@ -31,7 +32,6 @@ import okhttp3.RequestBody.Companion.toRequestBody
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.io.File
-
 
 class SignUpFragment(private val signIn: () -> Unit) :
     BaseFragment<FragmentSignUpBinding, SignUpViewModel>(R.layout.fragment_sign_up) {
@@ -105,12 +105,6 @@ class SignUpFragment(private val signIn: () -> Unit) :
     }
 
     private fun successSignIn(loginResponse: LoginResponse) {
-        viewModel.saveUser(CurrentUser(
-            image = imageUri.toString(),
-            username = etUserName,
-            fullname = null,
-            password = etPassword
-        ))
         tokenManager.saveAccessToken(loginResponse.access)
         tokenManager.saveRefreshToken(loginResponse.refresh)
         signIn()
@@ -158,8 +152,7 @@ class SignUpFragment(private val signIn: () -> Unit) :
                 username = username,
                 imageFile = imageFile,
                 nickname = nickname,
-                password = password,
-                imageUri = imageUri!!.toString()
+                password = password
             )
         }
     }
@@ -184,9 +177,5 @@ class SignUpFragment(private val signIn: () -> Unit) :
         val galleryIntent =
             Intent(Intent.ACTION_GET_CONTENT, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
         resultLauncher.launch(galleryIntent)
-    }
-
-    companion object {
-        const val READ_EXTERNAL_STORAGE_REQUEST_CODE = 1001
     }
 }

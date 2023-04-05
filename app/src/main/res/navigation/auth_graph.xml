@@ -12,8 +12,13 @@
         tools:layout="@layout/fragment_start" >
         <action
             android:id="@+id/action_startFragment_to_authorizationFragment"
-            app:destination="@id/authorizationFragment" />
+            app:destination="@id/authorizationFragment">
+            <argument
+                android:name="index"
+                app:argType="integer" />
+        </action>
     </fragment>
+
     <fragment
         android:id="@+id/authorizationFragment"
         android:name="com.geektech.mangaread.presentation.ui.fragments.auth_flow.authorization.AuthorizationFragment"

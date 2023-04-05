@@ -17,7 +17,6 @@ class AuthorizationFragment : BaseFragment<FragmentAuthorizationBinding,
 
     override val binding by viewBinding(FragmentAuthorizationBinding::bind)
     override val viewModel by viewModels<AuthorizationViewModel>()
-
     private lateinit var fragmentAdapter: AuthorizationPagerAdapter
 
     override fun initialize() {

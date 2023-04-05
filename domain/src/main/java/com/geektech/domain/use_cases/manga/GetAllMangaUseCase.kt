@@ -1,8 +1,10 @@
-package com.geektech.domain.use_cases.main
+package com.geektech.domain.use_cases.manga
 
-import com.geektech.domain.repositories.MainRepository
+import com.geektech.domain.repositories.MangaRepository
 
-class GetAllMangaUseCase(private val repository: MainRepository) {
+class GetAllMangaUseCase(
+    private val repository: MangaRepository
+) {
 
     operator fun invoke(
         type: List<String>?,

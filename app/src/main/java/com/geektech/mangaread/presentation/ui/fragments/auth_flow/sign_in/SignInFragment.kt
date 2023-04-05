@@ -1,6 +1,8 @@
 package com.geektech.mangaread.presentation.ui.fragments.auth_flow.sign_in
 
 import android.view.View
+import androidx.navigation.NavArgs
+import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.data.local_db.prefs.TokenManager
 import com.geektech.domain.model.LoginRequest

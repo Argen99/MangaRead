@@ -2,8 +2,8 @@ package com.geektech.mangaread.presentation.ui.fragments.main_flow.manga_detail.
 
 import com.geektech.domain.model.AddCommentResponse
 import com.geektech.domain.model.MangaComments
-import com.geektech.domain.use_cases.auth.AddCommentUseCase
-import com.geektech.domain.use_cases.main.GetMangaCommentsUseCase
+import com.geektech.domain.use_cases.comment.AddCommentUseCase
+import com.geektech.domain.use_cases.comment.GetMangaCommentsUseCase
 import com.geektech.mangaread.core.base.BaseViewModel
 import com.geektech.mangaread.core.ui_state.UIState
 import kotlinx.coroutines.flow.MutableStateFlow

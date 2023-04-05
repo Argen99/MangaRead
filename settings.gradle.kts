@@ -16,3 +16,4 @@ rootProject.name = "MangaRead"
 include (":app")
 include (":data")
 include (":domain")
+

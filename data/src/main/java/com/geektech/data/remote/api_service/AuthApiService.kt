@@ -1,19 +1,27 @@
 package com.geektech.data.remote.api_service
 
-import com.geektech.data.remote.model.AddCommentResponseDto
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
-import retrofit2.http.Path
+import com.geektech.data.remote.model.LoginRequestDto
+import com.geektech.data.remote.model.LoginResponseDto
+import com.geektech.data.remote.model.UserDto
+import okhttp3.RequestBody
+import retrofit2.http.*
 
 interface AuthApiService {
 
-    @POST("v1/manga/{id}/add-comment/")
-    @FormUrlEncoded
-    suspend fun addComment(
-        @Path("id") id: Int,
-        @Field("text") comment: String
-    ): AddCommentResponseDto
+    @Multipart
+    @POST("auth/signup/")
+    suspend fun userRegister(
+        @Part("username") username: RequestBody,
+        @Part("nickname") nickname: RequestBody,
+        @Part("image_file\"; filename = \"pp.png") imageFile: RequestBody,
+        @Part("password") password: RequestBody,
+    ): UserDto
+
+    @POST("auth/signin/")
+    @Headers("Content-Type: application/json")
+    suspend fun userLogin(
+        @Body request: LoginRequestDto
+    ): LoginResponseDto
 
     @POST("auth/logout/")
     @FormUrlEncoded

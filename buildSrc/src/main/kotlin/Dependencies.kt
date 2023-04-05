@@ -151,5 +151,9 @@ object Plugins {
     object Java {
         const val javaLibrary = "java-library"
     }
+
+    object NavSafeArgs {
+        const val navSafeArgs = "androidx.navigation.safeargs.kotlin"
+    }
 }
 

@@ -1,8 +1,8 @@
-package com.geektech.domain.use_cases.main
+package com.geektech.domain.use_cases.manga
 
-import com.geektech.domain.repositories.MainRepository
+import com.geektech.domain.repositories.MangaRepository
 
-class GetTopMangaUseCase(private val repository: MainRepository) {
+class GetTopMangaUseCase(private val repository: MangaRepository) {
 
     operator fun invoke(
         limit: Int?,

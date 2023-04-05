@@ -13,7 +13,7 @@ import java.io.IOException
 
 abstract class BaseRepository {
 
-    protected fun <T> doRequestList(request: suspend () -> List<T>) = flow {
+    protected fun <T> doRequestList(request: () -> Unit) = flow {
         emit(Resource.Loading())
         try {
             val data = request()
