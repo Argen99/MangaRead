@@ -24,7 +24,7 @@ object Versions {
     const val coroutines = "1.6.4"
 
     // Kotlin Koin
-    const val kotlinKoin = "3.1.2"
+    const val kotlinKoin = "3.3.3"
 
     // Paging
     const val pagingRuntime = "3.1.1"
