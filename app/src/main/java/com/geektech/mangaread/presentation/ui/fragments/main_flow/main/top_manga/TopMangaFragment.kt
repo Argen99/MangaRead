@@ -83,17 +83,4 @@ class TopMangaFragment(
     private fun onItemClick(id: String) {
         openMangaDetails(id)
     }
-
-//    override fun searchBy(text: String) {
-//        viewModel.getTopManga(search = text)
-//    }
-//
-//    override fun getFilterData(
-//        types: List<String>?,
-//        genres: List<String>?,
-//        sortByIssueYear: SortByIssueYear?
-//    ) {
-//        sortByYear = sortByIssueYear
-//        viewModel.getTopManga(type = types, genreTitle = genres)
-//    }
 }

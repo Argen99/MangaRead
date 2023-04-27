@@ -124,11 +124,10 @@ class MainFragment() : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout
 
         selectedTypes = typesAdapter.getSelectedItems()
         viewModel.filterBy(selectedTypes!!, selectedGenres!!)
-//        DataSendClass.instance?.sendFilterData(selectedTypes, selectedGenres, sortByIssueYear)
         dialog.dismiss()
-//        binding.tv.text = "Sort by: type:${selectedTypes.toString()}, genre:${selectedGenres}"
-//        typesAdapter.clearSelectedItems()
-//        genreAdapter.clearSelectedItems()
+        binding.tv.text = "Sort by: type:${selectedTypes.toString()}, genre:${selectedGenres}"
+        typesAdapter.clearSelectedItems()
+        genreAdapter.clearSelectedItems()
     }
 
     private fun showGenre(){
