@@ -9,18 +9,18 @@ import com.geektech.mangaread.core.base.BaseFragment
 import com.geektech.mangaread.core.extensions.gone
 import com.geektech.mangaread.core.extensions.showToast
 import com.geektech.mangaread.core.extensions.visible
-import com.geektech.mangaread.core.utils.DataSendClass
 import com.geektech.mangaread.databinding.FragmentTopMangaBinding
 import com.geektech.mangaread.presentation.ui.adapters.MangaAdapter
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import com.geektech.mangaread.presentation.ui.fragments.main_flow.main.MainViewModel
+import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 class TopMangaFragment(
     private val openMangaDetails: (id: String) -> Unit
 ) : BaseFragment<FragmentTopMangaBinding,
-        TopMangaViewModel>(R.layout.fragment_top_manga), DataSendClass.SearchBy {
+        MainViewModel>(R.layout.fragment_top_manga){
 
     override val binding by viewBinding(FragmentTopMangaBinding::bind)
-    override val viewModel by viewModel<TopMangaViewModel>()
+    override val viewModel by activityViewModel<MainViewModel>()
 
     private val mangaList = listOf<MangaResult>()
     private val mangaAdapter: MangaAdapter by lazy {
@@ -33,7 +33,7 @@ class TopMangaFragment(
     }
 
     override fun initialize() {
-        DataSendClass.instance?.setListener(this)
+//        DataSendClass.instance?.setListener(this)
 
         binding.rvTopManga.apply {
             layoutManager = GridLayoutManager(requireContext(), 2)
@@ -84,16 +84,16 @@ class TopMangaFragment(
         openMangaDetails(id)
     }
 
-    override fun searchBy(text: String) {
-        viewModel.getTopManga(search = text)
-    }
-
-    override fun getFilterData(
-        types: List<String>?,
-        genres: List<String>?,
-        sortByIssueYear: SortByIssueYear?
-    ) {
-        sortByYear = sortByIssueYear
-        viewModel.getTopManga(type = types, genreTitle = genres)
-    }
+//    override fun searchBy(text: String) {
+//        viewModel.getTopManga(search = text)
+//    }
+//
+//    override fun getFilterData(
+//        types: List<String>?,
+//        genres: List<String>?,
+//        sortByIssueYear: SortByIssueYear?
+//    ) {
+//        sortByYear = sortByIssueYear
+//        viewModel.getTopManga(type = types, genreTitle = genres)
+//    }
 }

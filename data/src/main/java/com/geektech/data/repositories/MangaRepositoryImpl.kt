@@ -17,27 +17,20 @@ class MangaRepositoryImpl(
     override fun getAllManga(
         type: List<String>?,
         genreTitle: List<String>?,
-        enName: String?,
-        ruName: String?,
         search: String?
     ): Flow<PagingData<MangaResult>> = doPagingRequest(
         MangaPagingSource(
-            apiService, type, genreTitle, enName, ruName, search
+            apiService, type, genreTitle, search
         )
     )
 
     override fun getTopManga(
-        limit: Int?,
-        offset: Int?,
         type: List<String>?,
         genreTitle: List<String>?,
-        enName: String?,
-        ruName: String?,
         search: String?
     ): Flow<Resource<List<MangaResult>>> = doRequest {
         apiService.getTopManga(
-            limit = limit, offset = offset, type = type, genreTitle = genreTitle,
-            enName = enName, ruName = ruName, search = search
+            type = type, genreTitle = genreTitle, search = search
         ).map { it.toModel() }
     }
 

@@ -14,7 +14,6 @@ import com.geektech.mangaread.core.base.BaseFragment
 import com.geektech.mangaread.core.extensions.navigateSafely
 import com.geektech.mangaread.core.extensions.showToast
 import com.geektech.mangaread.core.utils.Constants
-import com.geektech.mangaread.core.utils.DataSendClass
 import com.geektech.mangaread.databinding.FilterLayoutBinding
 import com.geektech.mangaread.databinding.FragmentMainBinding
 import com.geektech.mangaread.databinding.GenreLayoutBinding
@@ -24,12 +23,12 @@ import com.geektech.mangaread.presentation.ui.adapters.TypesAdapter
 import com.geektech.mangaread.presentation.ui.fragments.main_flow.main.all_manga.AllMangaFragment
 import com.geektech.mangaread.presentation.ui.fragments.main_flow.main.top_manga.TopMangaFragment
 import com.google.android.material.tabs.TabLayoutMediator
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 class MainFragment() : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout.fragment_main) {
 
     override val binding by viewBinding(FragmentMainBinding::bind)
-    override val viewModel by viewModel<MainViewModel>()
+    override val viewModel by activityViewModel<MainViewModel>()
 
     private var typesList = listOf<String>()
     private val genreList = listOf<Genres>()
@@ -122,12 +121,14 @@ class MainFragment() : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout
             }
         }
 
+
         selectedTypes = typesAdapter.getSelectedItems()
-        DataSendClass.instance?.sendFilterData(selectedTypes, selectedGenres, sortByIssueYear)
+        viewModel.filterBy(selectedTypes!!, selectedGenres!!)
+//        DataSendClass.instance?.sendFilterData(selectedTypes, selectedGenres, sortByIssueYear)
         dialog.dismiss()
-        binding.tv.text = "Sort by: type:${selectedTypes.toString()}, genre:${selectedGenres}"
-        typesAdapter.clearSelectedItems()
-        genreAdapter.clearSelectedItems()
+//        binding.tv.text = "Sort by: type:${selectedTypes.toString()}, genre:${selectedGenres}"
+//        typesAdapter.clearSelectedItems()
+//        genreAdapter.clearSelectedItems()
     }
 
     private fun showGenre(){
@@ -155,7 +156,11 @@ class MainFragment() : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout
 
     override fun setupObservers() {
         binding.etSearch.addTextChangedListener {
-            DataSendClass.instance?.search(it.toString())
+            if (binding.pager.currentItem == 0) {
+                viewModel.searchBy(it.toString())
+            } else {
+                viewModel.getTopManga(search = it.toString())
+            }
         }
 
         viewModel.getGenresState.collectState(

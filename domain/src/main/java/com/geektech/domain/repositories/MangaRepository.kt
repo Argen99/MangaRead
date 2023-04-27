@@ -10,18 +10,12 @@ interface MangaRepository {
     fun getAllManga(
         type: List<String>?,
         genreTitle: List<String>?,
-        enName: String?,
-        ruName: String?,
         search: String?
     ): Flow<PagingData<MangaResult>>
 
     fun getTopManga(
-        limit: Int?,
-        offset: Int?,
         type: List<String>?,
         genreTitle: List<String>?,
-        enName: String?,
-        ruName: String?,
         search: String?
     ): Flow<Resource<List<MangaResult>>>
 

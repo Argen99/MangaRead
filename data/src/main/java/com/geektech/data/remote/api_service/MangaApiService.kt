@@ -14,19 +14,13 @@ interface MangaApiService {
         @Query("offset") offset: Int?,
         @Query("type") type: List<String>?,
         @Query("genre__title") genreTitle: List<String>?,
-        @Query("en_name") enName: String?,
-        @Query("ru_name") ruName: String?,
         @Query("search") search: String?
     ): MangaResponseDto
 
     @GET("v1/top-manga/")
     suspend fun getTopManga(
-        @Query("limit") limit: Int?,
-        @Query("offset") offset: Int?,
         @Query("type") type: List<String>?,
         @Query("genre__title") genreTitle: List<String>?,
-        @Query("en_name") enName: String?,
-        @Query("ru_name") ruName: String?,
         @Query("search") search: String?
     ): List<MangaResultDto>
 

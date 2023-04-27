@@ -11,8 +11,6 @@ class MangaPagingSource(
     private val apiService: MangaApiService,
     private val type: List<String>? = null,
     private val genreTitle: List<String>?= null,
-    private val en_name: String?= null,
-    private val ru_name: String?= null,
     private val search: String?= null
 ) : PagingSource<Int, MangaResult>() {
 
@@ -23,7 +21,7 @@ class MangaPagingSource(
 
             val response = apiService.getAllManga(
                 limit = params.loadSize, offset = pageIndex, type,
-                genreTitle, en_name, ru_name, search)
+                genreTitle, search)
 
             val data = response.results.map { it.toModel() }
             val nextPageNumber = if (data.size == params.loadSize)
