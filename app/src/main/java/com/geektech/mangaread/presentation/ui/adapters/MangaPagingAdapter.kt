@@ -31,17 +31,20 @@ class MangaPagingAdapter(
             tvIssueYear.text = manga.issue_year.toString()
             tvMangaName.text = manga.ru_name
         }
+
         init {
             itemView.setOnClickListener {
                 onItemCLick(getItem(absoluteAdapterPosition)?.id.toString())
             }
         }
     }
+
     companion object {
-        val diffCallBack = object : DiffUtil.ItemCallback<MangaResult>(){
+        val diffCallBack = object : DiffUtil.ItemCallback<MangaResult>() {
             override fun areItemsTheSame(oldItem: MangaResult, newItem: MangaResult): Boolean {
                 return oldItem.id == newItem.id
             }
+
             override fun areContentsTheSame(oldItem: MangaResult, newItem: MangaResult): Boolean {
                 return oldItem == newItem
             }

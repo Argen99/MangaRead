@@ -4,8 +4,8 @@ import com.geektech.data.BuildConfig.BASE_URL
 import com.geektech.data.local_db.prefs.TokenManager
 import com.geektech.data.remote.api_service.AuthApiService
 import com.geektech.data.remote.api_service.CommentsApiService
-import com.geektech.data.remote.api_service.MangaApiService
 import com.geektech.data.remote.api_service.MainApiService
+import com.geektech.data.remote.api_service.MangaApiService
 import com.geektech.data.remote.retrofit.AuthAuthenticator
 import com.geektech.data.remote.retrofit.AuthInterceptor
 import okhttp3.OkHttpClient

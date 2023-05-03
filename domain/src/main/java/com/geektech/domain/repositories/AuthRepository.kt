@@ -1,7 +1,6 @@
 package com.geektech.domain.repositories
 
 import com.geektech.domain.common.Resource
-import com.geektech.domain.model.AddCommentResponse
 import com.geektech.domain.model.LoginRequest
 import com.geektech.domain.model.LoginResponse
 import com.geektech.domain.model.User

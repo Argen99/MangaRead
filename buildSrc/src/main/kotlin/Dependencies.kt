@@ -49,6 +49,7 @@ object Versions {
 
     // AGP
     const val AGP = "7.2.2"
+
     // Kotlin
     const val kotlin = "1.7.10"
 
@@ -60,19 +61,24 @@ object Dependencies {
     object UI {
         const val androidCore = "androidx.core:core-ktx:${Versions.androidCore}"
         const val androidAppCompat = "androidx.appcompat:appcompat:${Versions.androidAppCompat}"
-        const val androidMaterial = "com.google.android.material:material:${Versions.androidMaterial}"
-        const val androidConstraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.androidConstraintLayout}"
+        const val androidMaterial =
+            "com.google.android.material:material:${Versions.androidMaterial}"
+        const val androidConstraintLayout =
+            "androidx.constraintlayout:constraintlayout:${Versions.androidConstraintLayout}"
         const val androidxActivity = "androidx.activity:activity-ktx:${Versions.androidxActivity}"
         const val androidxFragment = "androidx.fragment:fragment-ktx:${Versions.androidxFragment}"
         const val androidLegacy = "androidx.legacy:legacy-support-v4:${Versions.androidLegacy}"
         const val junit = "junit:junit:${Versions.junit}"
         const val androidTestJunit = "androidx.test.ext:junit:${Versions.androidTestJunit}"
-        const val androidTestEspresso = "androidx.test.espresso:espresso-core:${Versions.androidTestEspresso}"
+        const val androidTestEspresso =
+            "androidx.test.espresso:espresso-core:${Versions.androidTestEspresso}"
     }
 
     object NavigationComponent {
-        const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigationComponent}"
-        const val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navigationComponent}"
+        const val navigationFragment =
+            "androidx.navigation:navigation-fragment-ktx:${Versions.navigationComponent}"
+        const val navigationUiKtx =
+            "androidx.navigation:navigation-ui-ktx:${Versions.navigationComponent}"
     }
 
     object Room {
@@ -88,7 +94,8 @@ object Dependencies {
     }
 
     object Coroutines {
-        const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+        const val coroutines =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
         const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
     }
 
@@ -104,7 +111,8 @@ object Dependencies {
     }
 
     object SwipeRefreshLayout {
-        const val swipeRefreshLayout = "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipeRefreshLayout}"
+        const val swipeRefreshLayout =
+            "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swipeRefreshLayout}"
     }
 
     object Glide {
@@ -113,12 +121,14 @@ object Dependencies {
     }
 
     object ViewBindingDelegate {
-        const val viewBindingDelegate = "com.github.kirich1409:viewbindingpropertydelegate-noreflection:${Versions.viewBindingDelegate}"
+        const val viewBindingDelegate =
+            "com.github.kirich1409:viewbindingpropertydelegate-noreflection:${Versions.viewBindingDelegate}"
     }
 
     object Retrofit {
         const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
-        const val retrofitConverterGson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+        const val retrofitConverterGson =
+            "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
         const val okHttp = "com.squareup.okhttp3:okhttp:${Versions.okHttp}"
     }
 

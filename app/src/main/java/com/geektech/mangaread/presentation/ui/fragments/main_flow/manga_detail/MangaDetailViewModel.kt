@@ -5,8 +5,8 @@ import com.geektech.domain.model.Genres
 import com.geektech.domain.model.MangaComments
 import com.geektech.domain.model.MangaResult
 import com.geektech.domain.use_cases.comment.AddCommentUseCase
-import com.geektech.domain.use_cases.main.GetGenresUseCase
 import com.geektech.domain.use_cases.comment.GetMangaCommentsUseCase
+import com.geektech.domain.use_cases.main.GetGenresUseCase
 import com.geektech.domain.use_cases.manga.GetMangaByIdUseCase
 import com.geektech.mangaread.core.base.BaseViewModel
 import com.geektech.mangaread.core.ui_state.UIState
@@ -38,14 +38,15 @@ class MangaDetailViewModel(
 
     fun getCommentsById(id: Int, limit: Int? = null, offset: Int? = null) {
         getMangaComments(
-            id = id, limit = limit, offset = offset).collectFlow(_getCommentsState)
+            id = id, limit = limit, offset = offset
+        ).collectFlow(_getCommentsState)
     }
 
     fun addComment(id: Int, comment: String) {
         addCommentUseCase.invoke(id = id, comment = comment).collectFlow(_addCommentState)
     }
 
-    fun getGenres(){
+    fun getGenres() {
         getGenresUseCase.invoke().collectFlow(_getGenresState)
     }
 

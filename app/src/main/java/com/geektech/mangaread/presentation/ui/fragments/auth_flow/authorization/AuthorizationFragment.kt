@@ -3,10 +3,10 @@ package com.geektech.mangaread.presentation.ui.fragments.auth_flow.authorization
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.mangaread.R
-import com.geektech.mangaread.databinding.FragmentAuthorizationBinding
 import com.geektech.mangaread.core.base.BaseFragment
 import com.geektech.mangaread.core.extensions.activityNavController
 import com.geektech.mangaread.core.extensions.navigateSafely
+import com.geektech.mangaread.databinding.FragmentAuthorizationBinding
 import com.geektech.mangaread.presentation.ui.adapters.AuthorizationPagerAdapter
 import com.geektech.mangaread.presentation.ui.fragments.auth_flow.sign_in.SignInFragment
 import com.geektech.mangaread.presentation.ui.fragments.auth_flow.sign_up.SignUpFragment
@@ -24,7 +24,10 @@ class AuthorizationFragment : BaseFragment<FragmentAuthorizationBinding,
 
         fragmentAdapter = AuthorizationPagerAdapter(requireActivity())
         fragmentAdapter.addFragment(SignInFragment(this::btnLogin), getString(R.string.login))
-        fragmentAdapter.addFragment(SignUpFragment(this::btnLogin), getString(R.string.btn_txt_registration))
+        fragmentAdapter.addFragment(
+            SignUpFragment(this::btnLogin),
+            getString(R.string.btn_txt_registration)
+        )
         binding.pagerAuth.adapter = fragmentAdapter
         binding.pagerAuth.post {
             binding.pagerAuth.setCurrentItem(currentItemIndex, false)

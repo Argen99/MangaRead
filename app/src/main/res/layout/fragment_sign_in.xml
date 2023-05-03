@@ -1,91 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.ui.fragments.auth_flow.sign_in.SignInFragment">
 
     <LinearLayout
-        android:layout_marginHorizontal="@dimen/dimen_margin_16"
-        android:orientation="vertical"
-        android:layout_marginTop="@dimen/dimen_margin_24"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dimen_margin_16"
+        android:layout_marginTop="@dimen/dimen_margin_24"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/BaseTextInputLayout"
-            android:hint="@string/username"
-            app:endIconMode="clear_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:hint="@string/username"
+            app:endIconMode="clear_text">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_user_name"
-                android:layout_width="match_parent"
                 style="@style/BaseTextInputEditText"
-                android:inputType="textPersonName"
-                android:layout_height="wrap_content"/>
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/BaseTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_margin_12"
             android:hint="@string/password"
-            app:endIconMode="password_toggle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_user_password"
                 style="@style/BaseTextInputEditText"
                 android:layout_width="match_parent"
-                android:inputType="textPassword"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/dimen_margin_32"
-        android:layout_height="wrap_content">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_sign_in"
             android:layout_width="match_parent"
-            android:text="@string/login"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/dimen_margin_16"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_height="wrap_content"/>
+            android:text="@string/login"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_marginTop="@dimen/dimen_margin_20"
-            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimen_margin_20"
+            android:orientation="horizontal">
 
             <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/dont_have_an_account"
                 android:textColor="@color/dark_gray"
-                android:textSize="@dimen/dimen_text_12"
-                android:layout_height="wrap_content"/>
+                android:textSize="@dimen/dimen_text_12" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_register"
                 android:layout_width="wrap_content"
-                android:text="@string/btn_txt_registration"
-                android:textSize="@dimen/dimen_text_12"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimen_margin_4"
+                android:text="@string/btn_txt_registration"
                 android:textColor="@color/black"
-                android:layout_height="wrap_content"/>
+                android:textSize="@dimen/dimen_text_12" />
 
         </LinearLayout>
 

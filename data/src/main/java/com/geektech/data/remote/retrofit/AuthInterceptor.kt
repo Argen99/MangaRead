@@ -9,7 +9,8 @@ import okhttp3.ResponseBody.Companion.toResponseBody
 import java.net.ProtocolException
 
 class AuthInterceptor(
-    private val tokenManager: TokenManager) : Interceptor {
+    private val tokenManager: TokenManager
+) : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()
@@ -29,7 +30,7 @@ class AuthInterceptor(
             val emptyBody = "".toResponseBody("text/plain".toMediaTypeOrNull())
             ResponseBody
 
-            return  chain.proceed(builder.build())
+            return chain.proceed(builder.build())
                 .newBuilder()
                 .code(200)
                 .body(emptyBody)

@@ -1,21 +1,13 @@
 package com.geektech.mangaread.presentation.ui.adapters
 
 import android.annotation.SuppressLint
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.webkit.URLUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.geektech.domain.model.MangaResult
-import com.geektech.mangaread.R
 import com.geektech.mangaread.core.extensions.loadImage
 import com.geektech.mangaread.databinding.ItemMangaBinding
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
-import java.net.URL
-import java.net.URLConnection
-import java.util.logging.Handler
-import kotlin.concurrent.thread
 
 class MangaAdapter(
     private var listManga: List<MangaResult>,

@@ -15,7 +15,7 @@ class TypesAdapter(
     private val layout: Int,
     private val types: List<String>,
     private val selectedItemsPrefs: SelectedItemsPrefs
-): ArrayAdapter<String>(context, layout, types) {
+) : ArrayAdapter<String>(context, layout, types) {
 
     private val selectedItems = arrayListOf<String>()
 
@@ -55,7 +55,7 @@ class TypesAdapter(
 
             override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
                 val text = buttonView?.text.toString()
-                if (isChecked && !selectedItems.contains(text)){
+                if (isChecked && !selectedItems.contains(text)) {
                     selectedItems.add(text)
                 } else {
                     selectedItems.remove(text)

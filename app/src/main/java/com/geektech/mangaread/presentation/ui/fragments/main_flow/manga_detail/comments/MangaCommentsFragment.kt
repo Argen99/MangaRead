@@ -97,7 +97,7 @@ class MangaCommentsFragment : BaseFragment<FragmentMangaCommentsBinding,
             },
             onSuccess = {
                 binding.progressBar.gone()
-                mangaId?.let {viewModel.getCommentsById(it)}
+                mangaId?.let { viewModel.getCommentsById(it) }
                 commentsAdapter.notifyDataSetChanged()
             },
             onError = {

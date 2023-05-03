@@ -1,20 +1,14 @@
 package com.geektech.mangaread.core.base
 
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.navigation.NavController
-import androidx.navigation.fragment.NavHostFragment
 import androidx.paging.PagingData
 import androidx.viewbinding.ViewBinding
-import com.geektech.mangaread.R
 import com.geektech.mangaread.core.ui_state.UIState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
@@ -55,7 +49,7 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
         onError: (message: String) -> Unit,
         onSuccess: (data: T) -> Unit
     ) {
-        viewLifecycleOwner.lifecycleScope.launch{
+        viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 this@collectState.collect { state ->
                     when (state) {
@@ -85,6 +79,7 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
             }
         }
     }
+
     private fun safeFlowGather(
         lifecycleState: Lifecycle.State,
         gather: suspend () -> Unit,

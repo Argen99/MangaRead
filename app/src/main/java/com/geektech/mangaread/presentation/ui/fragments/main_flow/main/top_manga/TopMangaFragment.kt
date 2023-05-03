@@ -17,7 +17,7 @@ import org.koin.androidx.viewmodel.ext.android.activityViewModel
 class TopMangaFragment(
     private val openMangaDetails: (id: String) -> Unit
 ) : BaseFragment<FragmentTopMangaBinding,
-        MainViewModel>(R.layout.fragment_top_manga){
+        MainViewModel>(R.layout.fragment_top_manga) {
 
     override val binding by viewBinding(FragmentTopMangaBinding::bind)
     override val viewModel by activityViewModel<MainViewModel>()

@@ -1,79 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    app:cardCornerRadius="6dp"
-    app:cardElevation="8dp"
     android:layout_marginTop="@dimen/dimen_margin_6"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    app:cardCornerRadius="6dp"
+    app:cardElevation="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
-            app:layout_constraintTop_toTopOf="parent"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:paddingHorizontal="@dimen/dimen_padding_16"
             android:paddingBottom="@dimen/dimen_padding_16"
-            android:layout_height="wrap_content">
+            app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/iv_user_avatar"
-                android:scaleType="centerCrop"
-                tools:src="@drawable/default_avatar"
-                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
-                android:layout_marginTop="@dimen/dimen_margin_28"
                 android:layout_width="64dp"
-                android:layout_height="64dp"/>
+                android:layout_height="64dp"
+                android:layout_marginTop="@dimen/dimen_margin_28"
+                android:scaleType="centerCrop"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+                tools:src="@drawable/default_avatar" />
 
             <LinearLayout
-                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimen_margin_6"
                 android:layout_marginTop="@dimen/dimen_margin_10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:orientation="vertical">
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_user_name"
-                    tools:text="Darlene Robertson"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/dimen_text_16"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dimen_text_16"
+                    android:textStyle="bold"
+                    tools:text="Darlene Robertson" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/tv_comment"
-                    android:maxLines="4"
-                    tools:text="@string/test_text"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:maxLines="4"
+                    tools:text="@string/test_text" />
 
             </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
-            app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/bg_gradient"
-            android:orientation="vertical"
-            android:layout_marginTop="66dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="66dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent">
 
             <View
                 android:id="@+id/gradient"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:background="@drawable/bg_gradient"/>
+                android:background="@drawable/bg_gradient" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:background="@color/white"/>
+                android:background="@color/white" />
 
         </LinearLayout>
 

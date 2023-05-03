@@ -22,7 +22,8 @@ class MangaCommentsViewModel(
 
     fun getCommentsById(id: Int, limit: Int? = null, offset: Int? = null) {
         getMangaComments(
-            id = id, limit = limit, offset = offset).collectFlow(_getCommentsState)
+            id = id, limit = limit, offset = offset
+        ).collectFlow(_getCommentsState)
     }
 
     fun addComment(id: Int, comment: String) {

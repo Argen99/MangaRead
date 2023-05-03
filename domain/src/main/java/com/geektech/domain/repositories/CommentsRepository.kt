@@ -7,7 +7,8 @@ import kotlinx.coroutines.flow.Flow
 
 interface CommentsRepository {
 
-    fun addComment(id: Int, comment: String
+    fun addComment(
+        id: Int, comment: String
     ): Flow<Resource<AddCommentResponse>>
 
     fun getCommentsById(id: Int, limit: Int?, offset: Int?): Flow<Resource<List<MangaComments>>>

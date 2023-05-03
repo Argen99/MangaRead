@@ -4,12 +4,12 @@ import com.geektech.domain.repositories.AuthRepository
 import com.geektech.domain.repositories.CommentsRepository
 import com.geektech.domain.repositories.MainRepository
 import com.geektech.domain.repositories.MangaRepository
-import com.geektech.domain.use_cases.comment.AddCommentUseCase
 import com.geektech.domain.use_cases.auth.LogoutUseCase
-import com.geektech.domain.use_cases.comment.GetMangaCommentsUseCase
 import com.geektech.domain.use_cases.auth.UserLoginUseCase
 import com.geektech.domain.use_cases.auth.UserRegisterUseCase
-import com.geektech.domain.use_cases.main.*
+import com.geektech.domain.use_cases.comment.AddCommentUseCase
+import com.geektech.domain.use_cases.comment.GetMangaCommentsUseCase
+import com.geektech.domain.use_cases.main.GetGenresUseCase
 import com.geektech.domain.use_cases.manga.GetAllMangaUseCase
 import com.geektech.domain.use_cases.manga.GetMangaByIdUseCase
 import com.geektech.domain.use_cases.manga.GetTopMangaUseCase
@@ -45,10 +45,10 @@ val domainModule = module {
     }
 
     factory<LogoutUseCase> {
-        LogoutUseCase(repository =  get<AuthRepository>())
+        LogoutUseCase(repository = get<AuthRepository>())
     }
 
     factory<GetGenresUseCase> {
-        GetGenresUseCase(repository =  get<MainRepository>())
+        GetGenresUseCase(repository = get<MainRepository>())
     }
 }

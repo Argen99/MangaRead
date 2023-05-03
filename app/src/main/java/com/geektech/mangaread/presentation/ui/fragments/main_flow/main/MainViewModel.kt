@@ -47,22 +47,26 @@ class MainViewModel(
 
     init {
         filter.tryEmit(FilterArguments(emptyList(), emptyList()))
-        allMangaFlow = combine(filter,searchBy) { filter, search ->
+        allMangaFlow = combine(filter, searchBy) { filter, search ->
             Pair(filter, search)
-        }.flatMapLatest {(filter, search) ->
-            getAllMangaUseCase.invoke(search = search, type = filter.type, genreTitle = filter.genreTitle)
+        }.flatMapLatest { (filter, search) ->
+            getAllMangaUseCase.invoke(
+                search = search,
+                type = filter.type,
+                genreTitle = filter.genreTitle
+            )
                 .debounce(500)
                 .cachedIn(viewModelScope)
         }
     }
 
-    fun filterBy(type: List<String>, genreTitle: List<String>) {
+    fun allMangaFilterBy(type: List<String>?, genreTitle: List<String>?) {
         filter.tryEmit(
             FilterArguments(type, genreTitle)
         )
     }
 
-    fun searchBy(value: String) {
+    fun allMangaSearchBy(value: String) {
         if (searchBy.value == value) return
         searchBy.value = value
     }

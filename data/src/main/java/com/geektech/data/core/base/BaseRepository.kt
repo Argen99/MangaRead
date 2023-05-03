@@ -39,7 +39,7 @@ abstract class BaseRepository {
         }
     }.flowOn(Dispatchers.IO)
 
-    protected fun <Key: Any, Model : Any> doPagingRequest(
+    protected fun <Key : Any, Model : Any> doPagingRequest(
         pagingSource: PagingSource<Key, Model>
     ) = Pager(
         PagingConfig(

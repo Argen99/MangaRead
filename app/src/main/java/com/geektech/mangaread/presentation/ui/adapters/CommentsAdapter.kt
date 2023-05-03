@@ -1,23 +1,14 @@
 package com.geektech.mangaread.presentation.ui.adapters
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.core.text.PrecomputedTextCompat
-import androidx.core.widget.TextViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.geektech.domain.model.MangaComments
 import com.geektech.mangaread.core.extensions.gone
 import com.geektech.mangaread.core.extensions.loadImage
 import com.geektech.mangaread.core.extensions.visible
 import com.geektech.mangaread.databinding.ItemCommentsBinding
-import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import java.lang.ref.WeakReference
 
 class CommentsAdapter(
     private var listComments: List<MangaComments>,

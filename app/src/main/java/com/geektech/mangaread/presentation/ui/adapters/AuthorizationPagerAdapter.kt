@@ -10,7 +10,7 @@ class AuthorizationPagerAdapter(fragmentActivity: FragmentActivity) :
     private val mFragmentList: MutableList<Fragment> = ArrayList()
     private val mFragmentTitleList: MutableList<String> = ArrayList()
 
-    fun getTabTitle(position : Int): String{
+    fun getTabTitle(position: Int): String {
         return mFragmentTitleList[position]
     }
 

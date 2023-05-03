@@ -16,11 +16,13 @@ class StartFragment : BaseFragment<FragmentStartBinding, BaseViewModel>(R.layout
     override fun setupClickListeners() {
         binding.btnSignIn.setOnClickListener {
             findNavController().navigateSafely(
-                StartFragmentDirections.actionStartFragmentToAuthorizationFragment(0))
+                StartFragmentDirections.actionStartFragmentToAuthorizationFragment(0)
+            )
         }
         binding.btnSignUp.setOnClickListener {
             findNavController().navigateSafely(
-                StartFragmentDirections.actionStartFragmentToAuthorizationFragment(1))
+                StartFragmentDirections.actionStartFragmentToAuthorizationFragment(1)
+            )
         }
     }
 }

@@ -25,7 +25,8 @@ class RealPathUtil {
                             // This is for checking Main Memory
                             return if ("primary".equals(type, ignoreCase = true)) {
                                 if (split.size > 1) {
-                                    Environment.getExternalStorageDirectory().toString() + "/" + split[1]
+                                    Environment.getExternalStorageDirectory()
+                                        .toString() + "/" + split[1]
                                 } else {
                                     Environment.getExternalStorageDirectory().toString() + "/"
                                 }
@@ -37,7 +38,8 @@ class RealPathUtil {
                         isDownloadsDocument(uri) -> {
                             val fileName = getFilePath(context, uri)
                             if (fileName != null) {
-                                return Environment.getExternalStorageDirectory().toString() + "/Download/" + fileName
+                                return Environment.getExternalStorageDirectory()
+                                    .toString() + "/Download/" + fileName
                             }
                             var id = DocumentsContract.getDocumentId(uri)
                             if (id.startsWith("raw:")) {
@@ -45,7 +47,10 @@ class RealPathUtil {
                                 val file = File(id)
                                 if (file.exists()) return id
                             }
-                            val contentUri = ContentUris.withAppendedId(Uri.parse("content://downloads/public_downloads"), java.lang.Long.valueOf(id))
+                            val contentUri = ContentUris.withAppendedId(
+                                Uri.parse("content://downloads/public_downloads"),
+                                java.lang.Long.valueOf(id)
+                            )
                             return getDataColumn(context, contentUri, null, null)
                         }
                         isMediaDocument(uri) -> {
@@ -72,7 +77,12 @@ class RealPathUtil {
                 }
                 "content".equals(uri.scheme, ignoreCase = true) -> {
                     // Return the remote address
-                    return if (isGooglePhotosUri(uri)) uri.lastPathSegment else getDataColumn(context, uri, null, null)
+                    return if (isGooglePhotosUri(uri)) uri.lastPathSegment else getDataColumn(
+                        context,
+                        uri,
+                        null,
+                        null
+                    )
                 }
                 "file".equals(uri.scheme, ignoreCase = true) -> {
                     return uri.path
@@ -81,8 +91,10 @@ class RealPathUtil {
             return null
         }
 
-        fun getDataColumn(context: Context, uri: Uri?, selection: String?,
-                          selectionArgs: Array<String>?): String? {
+        fun getDataColumn(
+            context: Context, uri: Uri?, selection: String?,
+            selectionArgs: Array<String>?
+        ): String? {
             var cursor: Cursor? = null
             val column = "_data"
             val projection = arrayOf(
@@ -90,8 +102,10 @@ class RealPathUtil {
             )
             try {
                 if (uri == null) return null
-                cursor = context.contentResolver.query(uri, projection, selection, selectionArgs,
-                    null)
+                cursor = context.contentResolver.query(
+                    uri, projection, selection, selectionArgs,
+                    null
+                )
                 if (cursor != null && cursor.moveToFirst()) {
                     val index = cursor.getColumnIndexOrThrow(column)
                     return cursor.getString(index)
@@ -110,8 +124,10 @@ class RealPathUtil {
             )
             try {
                 if (uri == null) return null
-                cursor = context.contentResolver.query(uri, projection, null, null,
-                    null)
+                cursor = context.contentResolver.query(
+                    uri, projection, null, null,
+                    null
+                )
                 if (cursor != null && cursor.moveToFirst()) {
                     val index = cursor.getColumnIndexOrThrow(MediaStore.MediaColumns.DISPLAY_NAME)
                     return cursor.getString(index)

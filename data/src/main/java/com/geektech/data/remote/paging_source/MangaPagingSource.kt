@@ -10,8 +10,8 @@ import com.geektech.domain.model.MangaResult
 class MangaPagingSource(
     private val apiService: MangaApiService,
     private val type: List<String>? = null,
-    private val genreTitle: List<String>?= null,
-    private val search: String?= null
+    private val genreTitle: List<String>? = null,
+    private val search: String? = null
 ) : PagingSource<Int, MangaResult>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, MangaResult> {
@@ -21,7 +21,8 @@ class MangaPagingSource(
 
             val response = apiService.getAllManga(
                 limit = params.loadSize, offset = pageIndex, type,
-                genreTitle, search)
+                genreTitle, search
+            )
 
             val data = response.results.map { it.toModel() }
             val nextPageNumber = if (data.size == params.loadSize)
@@ -32,7 +33,8 @@ class MangaPagingSource(
             LoadResult.Page(
                 data = data,
                 prevKey = null,
-                nextKey = nextPageNumber)
+                nextKey = nextPageNumber
+            )
 
         } catch (exception: Exception) {
             LoadResult.Error(exception)

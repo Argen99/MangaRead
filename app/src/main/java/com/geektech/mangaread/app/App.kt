@@ -18,4 +18,4 @@ class App : Application() {
             modules(listOf(appModule, dataModule, domainModule, networkModule))
         }
     }
- }
+}

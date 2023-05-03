@@ -20,7 +20,8 @@ val dataModule = module {
 
     single<MainRepository> {
         MainRepositoryImpl(
-            apiService = get<MainApiService>())
+            apiService = get<MainApiService>()
+        )
     }
 
     single<AuthRepository> {
@@ -35,11 +36,11 @@ val dataModule = module {
         CommentsRepositoryImpl(apiService = get<CommentsApiService>())
     }
 
-    single <TokenManager>{
+    single<TokenManager> {
         TokenManager(context = get())
     }
 
-    single <SelectedItemsPrefs>{
+    single<SelectedItemsPrefs> {
         SelectedItemsPrefs(context = get())
     }
 }

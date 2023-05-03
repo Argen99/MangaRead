@@ -96,11 +96,11 @@
 
             <ListView
                 android:id="@+id/lv_types"
-                android:divider="@null"
-                android:dividerHeight="0dp"
-                android:layout_marginTop="@dimen/dimen_margin_16"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_margin_16"
+                android:divider="@null"
+                android:dividerHeight="0dp" />
 
         </LinearLayout>
 
@@ -132,9 +132,9 @@
                     android:background="@drawable/bg_et_filter_l"
                     android:fontFamily="@font/montserrat_regular"
                     android:hint="@string/from"
-                    android:maxLines="1"
-                    android:maxLength="4"
                     android:inputType="number"
+                    android:maxLength="4"
+                    android:maxLines="1"
                     android:textSize="@dimen/dimen_text_16"
                     tools:ignore="Autofill" />
 
@@ -148,12 +148,12 @@
                     android:id="@+id/et_to"
                     android:layout_width="116dp"
                     android:layout_height="wrap_content"
-                    android:maxLines="1"
-                    android:maxLength="4"
                     android:background="@drawable/bg_et_filter_l"
                     android:fontFamily="@font/montserrat_regular"
                     android:hint="@string/before"
                     android:inputType="number"
+                    android:maxLength="4"
+                    android:maxLines="1"
                     android:textSize="@dimen/dimen_text_16"
                     tools:ignore="Autofill" />
 
@@ -173,20 +173,20 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/montserrat_regular"
+                android:paddingHorizontal="0dp"
                 android:text="@string/reset"
                 android:textColor="@color/purple"
                 android:textSize="@dimen/dimen_text_14"
-                android:paddingHorizontal="0dp"
                 app:strokeColor="@color/purple"
                 app:strokeWidth="2dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_apply"
                 android:layout_width="124dp"
-                android:paddingHorizontal="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimen_margin_12"
                 android:fontFamily="@font/montserrat_regular"
+                android:paddingHorizontal="0dp"
                 android:text="@string/apply"
                 android:textColor="@color/white"
                 android:textSize="@dimen/dimen_text_14" />

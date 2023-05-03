@@ -12,7 +12,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.data.local_db.prefs.TokenManager
-import com.geektech.domain.model.CurrentUser
 import com.geektech.domain.model.LoginRequest
 import com.geektech.domain.model.LoginResponse
 import com.geektech.domain.model.User

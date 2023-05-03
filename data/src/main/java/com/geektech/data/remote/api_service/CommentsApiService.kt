@@ -14,7 +14,7 @@ interface CommentsApiService {
     ): AddCommentResponseDto
 
     @GET("v1/manga/{id}/comments/")
-    suspend fun getCommentsByMangaId (
+    suspend fun getCommentsByMangaId(
         @Path("id") id: Int,
         @Query("limit") limit: Int?,
         @Query("offset") offset: Int?

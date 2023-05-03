@@ -9,7 +9,7 @@
         android:id="@+id/mainFragment"
         android:name="com.geektech.mangaread.presentation.ui.fragments.main_flow.main.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_mangaDetailFragment"
             app:destination="@id/mangaDetailFragment" />
@@ -18,7 +18,7 @@
         android:id="@+id/mangaDetailFragment"
         android:name="com.geektech.mangaread.presentation.ui.fragments.main_flow.manga_detail.MangaDetailFragment"
         android:label="fragment_manga_detail"
-        tools:layout="@layout/fragment_manga_detail" >
+        tools:layout="@layout/fragment_manga_detail">
         <action
             android:id="@+id/action_mangaDetailFragment_to_mangaCommentsFragment"
             app:destination="@id/mangaCommentsFragment" />

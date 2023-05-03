@@ -3,12 +3,15 @@ package com.geektech.data.remote.retrofit
 import com.geektech.data.local_db.prefs.TokenManager
 import com.geektech.data.remote.api_service.MainApiService
 import kotlinx.coroutines.runBlocking
-import okhttp3.*
+import okhttp3.Authenticator
+import okhttp3.Request
+import okhttp3.Response
+import okhttp3.Route
 
 class AuthAuthenticator(
     private val apiService: MainApiService,
     private val tokenManager: TokenManager,
-): Authenticator {
+) : Authenticator {
 
     override fun authenticate(route: Route?, response: Response): Request? {
         return runBlocking {

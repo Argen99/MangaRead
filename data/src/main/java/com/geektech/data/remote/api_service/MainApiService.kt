@@ -8,7 +8,7 @@ interface MainApiService {
     @POST("token/refresh/")
     suspend fun refreshToken(
         @Body token: String
-    ) : RefreshTokenDto
+    ): RefreshTokenDto
 
     @GET("v1/genre/")
     suspend fun getGenres(

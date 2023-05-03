@@ -61,7 +61,8 @@ class MangaDetailFragment() : BaseFragment<FragmentMangaDetailBinding,
             onLoading = { binding.progressBarMdf.visible() },
             onSuccess = {
                 binding.progressBarMdf.gone()
-                setDetails(it) },
+                setDetails(it)
+            },
             onError = { context?.showToast(it) }
         )
 
@@ -69,15 +70,17 @@ class MangaDetailFragment() : BaseFragment<FragmentMangaDetailBinding,
             onLoading = {},
             onSuccess = {
                 commentsAdapter.submitList(it)
-                checkData(it) },
+                checkData(it)
+            },
             onError = { context?.showToast(it) }
         )
 
         viewModel.addCommentState.collectState(
             onLoading = {},
             onSuccess = {
-                mangaId?.let {viewModel.getCommentsById(it.toInt())}
-                commentsAdapter.notifyDataSetChanged() },
+                mangaId?.let { viewModel.getCommentsById(it.toInt()) }
+                commentsAdapter.notifyDataSetChanged()
+            },
             onError = { context?.showToast(it) }
         )
 
@@ -98,7 +101,7 @@ class MangaDetailFragment() : BaseFragment<FragmentMangaDetailBinding,
         }
 
         binding.btnBack.setOnClickListener {
-           findNavController().navigateUp()
+            findNavController().navigateUp()
         }
     }
 
@@ -137,8 +140,10 @@ class MangaDetailFragment() : BaseFragment<FragmentMangaDetailBinding,
 //            R.id.action_mangaDetailFragment_to_mangaCommentsFragment,
 //            bundleOf(Constants.ID_MDF_MCF to mangaId)
 //        )
-        findNavController().navigateSafely(R.id.action_mangaDetailFragment_to_mangaCommentsFragment,
-            bundleOf(Constants.ID_MDF_MCF to mangaId))
+        findNavController().navigateSafely(
+            R.id.action_mangaDetailFragment_to_mangaCommentsFragment,
+            bundleOf(Constants.ID_MDF_MCF to mangaId)
+        )
     }
 
     private fun setDetails(model: MangaResult) {

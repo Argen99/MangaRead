@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
 class MainPagerAdapter(fragmentActivity: FragmentActivity) :
-FragmentStateAdapter(fragmentActivity) {
+    FragmentStateAdapter(fragmentActivity) {
 
     private val mFragmentList: MutableList<Fragment> = ArrayList()
     private val mFragmentTitleList: MutableList<String> = ArrayList()

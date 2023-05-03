@@ -1,7 +1,6 @@
 package com.geektech.domain.use_cases.auth
 
 import com.geektech.domain.repositories.AuthRepository
-import com.geektech.domain.repositories.MainRepository
 import okhttp3.RequestBody
 
 class UserRegisterUseCase(
@@ -14,5 +13,6 @@ class UserRegisterUseCase(
         password: RequestBody
     ) = repository.userRegister(
         username = username, nickname = nickname,
-        imageFile = imageFile, password = password)
+        imageFile = imageFile, password = password
+    )
 }

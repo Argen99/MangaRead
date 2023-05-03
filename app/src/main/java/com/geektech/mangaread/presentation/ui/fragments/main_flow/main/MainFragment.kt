@@ -92,15 +92,15 @@ class MainFragment() : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout
 
         typesList = resources.getStringArray(R.array.types).toList()
 
-        filterBinding.lvTypes.adapter = when(binding.pager.currentItem) {
+        filterBinding.lvTypes.adapter = when (binding.pager.currentItem) {
             0 -> {
                 allMangaTypesAdapter
             }
             else -> {
-               topMangaTypesAdapter
+                topMangaTypesAdapter
             }
         }
-            allMangaTypesAdapter
+        allMangaTypesAdapter
 
         filterBinding.btnDismiss.setOnClickListener {
             dialog.dismiss()
@@ -144,18 +144,19 @@ class MainFragment() : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout
 //                        sortByIssueYear.to = filterBinding.etTo.text.toString().toInt()
 //                    }
 //                }
-//
-//                selectedTypes = typesAdapter.getSelectedItems()
-//                viewModel.filterBy(selectedTypes!!, selectedGenres!!)
-//                dialog.dismiss()
-//                typesAdapter.clearSelectedItems()
-//                genreAdapter.clearSelectedItems()
+                viewModel.allMangaFilterBy(allMangaSelectedTypes, allMangaSelectedGenres)
+                dialog.dismiss()
+
                 requireActivity().showToast("Paging ${allMangaSelectedTypes?.joinToString()} , ${allMangaSelectedGenres?.joinToString()}")
             }
             else -> {
                 topMangaSelectedTypes = topMangaTypesAdapter.getSelectedItems()
+                viewModel.getTopManga(
+                    type = topMangaSelectedTypes,
+                    genreTitle = topMangaSelectedGenres
+                )
+
                 requireActivity().showToast("Top ${topMangaSelectedTypes?.joinToString()} , ${topMangaSelectedGenres?.joinToString()}")
-//                viewModel.getTopManga(type = topMangaSelectedTypes, genreTitle = topMangaSelectedGenres)
             }
         }
     }
@@ -200,7 +201,7 @@ class MainFragment() : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout
     override fun setupObservers() {
         binding.etSearch.addTextChangedListener {
             if (binding.pager.currentItem == 0) {
-                viewModel.searchBy(it.toString())
+                viewModel.allMangaSearchBy(it.toString())
             } else {
                 viewModel.getTopManga(search = it.toString())
             }

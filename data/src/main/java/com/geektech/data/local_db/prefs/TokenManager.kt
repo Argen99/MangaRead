@@ -2,7 +2,7 @@ package com.geektech.data.local_db.prefs
 
 import android.content.Context
 
-class TokenManager (context: Context) {
+class TokenManager(context: Context) {
 
     private var prefs = context.getSharedPreferences(PREFS_TOKEN_FILE, Context.MODE_PRIVATE)
 
@@ -12,7 +12,7 @@ class TokenManager (context: Context) {
         editor.apply()
     }
 
-    fun getAccessToken() : String? {
+    fun getAccessToken(): String? {
         return prefs.getString(USER_ACCESS_TOKEN, null)
     }
 
@@ -22,7 +22,7 @@ class TokenManager (context: Context) {
         editor.apply()
     }
 
-    fun getRefreshToken() : String? {
+    fun getRefreshToken(): String? {
         return prefs.getString(USER_REFRESH_TOKEN, null)
     }
 

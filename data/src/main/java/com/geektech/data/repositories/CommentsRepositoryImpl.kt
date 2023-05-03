@@ -1,7 +1,6 @@
 package com.geektech.data.repositories
 
 import com.geektech.data.core.base.BaseRepository
-import com.geektech.data.local_db.prefs.TokenManager
 import com.geektech.data.remote.api_service.CommentsApiService
 import com.geektech.data.remote.mappers.toModel
 import com.geektech.domain.common.Resource
