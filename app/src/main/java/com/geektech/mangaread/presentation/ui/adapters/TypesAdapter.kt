@@ -1,19 +1,20 @@
 package com.geektech.mangaread.presentation.ui.adapters
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.CompoundButton
 import android.widget.RadioGroup
+import com.geektech.data.local_db.prefs.SelectedItemsPrefs
 import com.geektech.mangaread.databinding.ItemFilterBinding
 
 class TypesAdapter(
     context: Context,
     private val layout: Int,
-    private val types: List<String>
+    private val types: List<String>,
+    private val selectedItemsPrefs: SelectedItemsPrefs
 ): ArrayAdapter<String>(context, layout, types) {
 
     private val selectedItems = arrayListOf<String>()
@@ -42,8 +43,9 @@ class TypesAdapter(
         } else {
             binding = ItemFilterBinding.bind(row)
         }
-        val item = types[position]
-        binding.checkboxRv.text = item
+        binding.checkboxRv.text = types[position]
+
+        binding.checkboxRv.isChecked = selectedItems.contains(binding.checkboxRv.text.toString())
 
         binding.checkboxRv.setOnCheckedChangeListener(object : RadioGroup.OnCheckedChangeListener,
             CompoundButton.OnCheckedChangeListener {
@@ -52,10 +54,11 @@ class TypesAdapter(
             }
 
             override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
-                if (isChecked){
-                    selectedItems.add(buttonView?.text.toString())
+                val text = buttonView?.text.toString()
+                if (isChecked && !selectedItems.contains(text)){
+                    selectedItems.add(text)
                 } else {
-                    selectedItems.remove(buttonView?.text.toString())
+                    selectedItems.remove(text)
                 }
             }
         })

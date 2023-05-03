@@ -2,7 +2,6 @@ package com.geektech.mangaread.presentation.ui.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -50,9 +49,9 @@ class GenreAdapter(
         } else {
             binding = ItemFilterBinding.bind(row)
         }
-        val item = genresList[position]
 
         binding.checkboxRv.text = genresList[position].title
+        binding.checkboxRv.isChecked = selectedItems.contains(binding.checkboxRv.text.toString())
 
         binding.checkboxRv.setOnCheckedChangeListener(object :
             RadioGroup.OnCheckedChangeListener,

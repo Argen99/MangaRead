@@ -23,7 +23,6 @@ class AllMangaFragment(private val openMangaDetails: (id: String) -> Unit) :
     }
 
     override fun initialize() {
-
         binding.rvAllManga.apply {
             layoutManager = GridLayoutManager(requireContext(), 2)
             adapter = mangaAdapter

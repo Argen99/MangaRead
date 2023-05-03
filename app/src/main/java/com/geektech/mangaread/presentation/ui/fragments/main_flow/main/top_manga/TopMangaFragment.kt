@@ -33,8 +33,6 @@ class TopMangaFragment(
     }
 
     override fun initialize() {
-//        DataSendClass.instance?.setListener(this)
-
         binding.rvTopManga.apply {
             layoutManager = GridLayoutManager(requireContext(), 2)
             adapter = mangaAdapter

@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.Flow
 
 class MangaRepositoryImpl(
     private val apiService: MangaApiService
-): BaseRepository(), MangaRepository {
+) : BaseRepository(), MangaRepository {
 
     override fun getAllManga(
         type: List<String>?,

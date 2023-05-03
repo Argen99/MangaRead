@@ -1,11 +1,10 @@
 package com.geektech.mangaread.presentation.ui.activities
 
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.fragment.NavHostFragment
+import com.geektech.data.local_db.prefs.SelectedItemsPrefs
 import com.geektech.data.local_db.prefs.TokenManager
 import com.geektech.mangaread.R
 import com.geektech.mangaread.databinding.ActivityMainBinding
@@ -15,6 +14,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val tokenManager: TokenManager by inject()
+    private val selectedItems: SelectedItemsPrefs by inject()
     private val navController by lazy {
         (supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment).navController
     }
@@ -38,5 +38,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
         navController.graph = navGraph
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        selectedItems.clearPrefs()
     }
 }

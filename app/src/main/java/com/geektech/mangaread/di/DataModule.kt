@@ -1,10 +1,11 @@
 package com.geektech.mangaread.di
 
+import com.geektech.data.local_db.prefs.SelectedItemsPrefs
 import com.geektech.data.local_db.prefs.TokenManager
 import com.geektech.data.remote.api_service.AuthApiService
 import com.geektech.data.remote.api_service.CommentsApiService
-import com.geektech.data.remote.api_service.MangaApiService
 import com.geektech.data.remote.api_service.MainApiService
+import com.geektech.data.remote.api_service.MangaApiService
 import com.geektech.data.repositories.AuthRepositoryImpl
 import com.geektech.data.repositories.CommentsRepositoryImpl
 import com.geektech.data.repositories.MainRepositoryImpl
@@ -36,5 +37,9 @@ val dataModule = module {
 
     single <TokenManager>{
         TokenManager(context = get())
+    }
+
+    single <SelectedItemsPrefs>{
+        SelectedItemsPrefs(context = get())
     }
 }

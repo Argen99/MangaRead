@@ -7,8 +7,8 @@ import androidx.core.os.bundleOf
 import androidx.core.widget.addTextChangedListener
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.geektech.data.local_db.prefs.SelectedItemsPrefs
 import com.geektech.domain.model.Genres
-import com.geektech.domain.model.SortByIssueYear
 import com.geektech.mangaread.R
 import com.geektech.mangaread.core.base.BaseFragment
 import com.geektech.mangaread.core.extensions.navigateSafely
@@ -23,6 +23,7 @@ import com.geektech.mangaread.presentation.ui.adapters.TypesAdapter
 import com.geektech.mangaread.presentation.ui.fragments.main_flow.main.all_manga.AllMangaFragment
 import com.geektech.mangaread.presentation.ui.fragments.main_flow.main.top_manga.TopMangaFragment
 import com.google.android.material.tabs.TabLayoutMediator
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 class MainFragment() : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout.fragment_main) {
@@ -33,14 +34,26 @@ class MainFragment() : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout
     private var typesList = listOf<String>()
     private val genreList = listOf<Genres>()
 
-    private var selectedTypes: List<String>? = null
-    private var selectedGenres: List<String>? = null
+    private var topMangaSelectedTypes: List<String>? = null
+    private var topMangaSelectedGenres: List<String>? = null
 
-    private val genreAdapter: GenreAdapter by lazy {
-        GenreAdapter(requireContext(),R.layout.genre_layout,genreList)
+    private var allMangaSelectedTypes: List<String>? = null
+    private var allMangaSelectedGenres: List<String>? = null
+
+    private val selectedItemsPrefs: SelectedItemsPrefs by inject()
+
+    private val allMangaGenreAdapter: GenreAdapter by lazy {
+        GenreAdapter(requireContext(), R.layout.genre_layout, genreList)
     }
-    private val typesAdapter: TypesAdapter by lazy {
-        TypesAdapter(requireContext(),R.layout.filter_layout, typesList)
+    private val allMangaTypesAdapter: TypesAdapter by lazy {
+        TypesAdapter(requireContext(), R.layout.filter_layout, typesList, selectedItemsPrefs)
+    }
+
+    private val topMangaGenreAdapter: GenreAdapter by lazy {
+        GenreAdapter(requireContext(), R.layout.genre_layout, genreList)
+    }
+    private val topMangaTypesAdapter: TypesAdapter by lazy {
+        TypesAdapter(requireContext(), R.layout.filter_layout, typesList, selectedItemsPrefs)
     }
 
     override fun initialize() {
@@ -79,7 +92,15 @@ class MainFragment() : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout
 
         typesList = resources.getStringArray(R.array.types).toList()
 
-        filterBinding.lvTypes.adapter = typesAdapter
+        filterBinding.lvTypes.adapter = when(binding.pager.currentItem) {
+            0 -> {
+                allMangaTypesAdapter
+            }
+            else -> {
+               topMangaTypesAdapter
+            }
+        }
+            allMangaTypesAdapter
 
         filterBinding.btnDismiss.setOnClickListener {
             dialog.dismiss()
@@ -90,7 +111,7 @@ class MainFragment() : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout
         }
 
         filterBinding.showGenre.setOnClickListener {
-           showGenre()
+            showGenre()
         }
 
         filterBinding.btnReset.setOnClickListener {
@@ -100,37 +121,46 @@ class MainFragment() : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout
         dialog.show()
     }
 
-    private fun performFiltering (
+    private fun performFiltering(
         filterBinding: FilterLayoutBinding,
         dialog: Dialog
     ) {
-        val sortByIssueYear = SortByIssueYear(null, null)
-        if (filterBinding.etFrom.text.toString().isNotEmpty()) {
-            if (filterBinding.etFrom.text.toString().length < 4) {
-                filterBinding.etFrom.error = getString(R.string.min_length)
-            } else {
-                sortByIssueYear.from = filterBinding.etFrom.text.toString().toInt()
+        when (binding.pager.currentItem) {
+            0 -> {
+                allMangaSelectedTypes = allMangaTypesAdapter.getSelectedItems()
+//                val sortByIssueYear = SortByIssueYear(null, null)
+//                if (filterBinding.etFrom.text.toString().isNotEmpty()) {
+//                    if (filterBinding.etFrom.text.toString().length < 4) {
+//                        filterBinding.etFrom.error = getString(R.string.min_length)
+//                    } else {
+//                        sortByIssueYear.from = filterBinding.etFrom.text.toString().toInt()
+//                    }
+//                }
+//
+//                if (filterBinding.etTo.text.toString().isNotEmpty()) {
+//                    if (filterBinding.etTo.text.toString().length < 4) {
+//                        filterBinding.etTo.error = getString(R.string.min_length)
+//                    } else {
+//                        sortByIssueYear.to = filterBinding.etTo.text.toString().toInt()
+//                    }
+//                }
+//
+//                selectedTypes = typesAdapter.getSelectedItems()
+//                viewModel.filterBy(selectedTypes!!, selectedGenres!!)
+//                dialog.dismiss()
+//                typesAdapter.clearSelectedItems()
+//                genreAdapter.clearSelectedItems()
+                requireActivity().showToast("Paging ${allMangaSelectedTypes?.joinToString()} , ${allMangaSelectedGenres?.joinToString()}")
+            }
+            else -> {
+                topMangaSelectedTypes = topMangaTypesAdapter.getSelectedItems()
+                requireActivity().showToast("Top ${topMangaSelectedTypes?.joinToString()} , ${topMangaSelectedGenres?.joinToString()}")
+//                viewModel.getTopManga(type = topMangaSelectedTypes, genreTitle = topMangaSelectedGenres)
             }
         }
-
-        if (filterBinding.etTo.text.toString().isNotEmpty()) {
-            if (filterBinding.etTo.text.toString().length < 4) {
-                filterBinding.etTo.error = getString(R.string.min_length)
-            } else {
-                sortByIssueYear.to = filterBinding.etTo.text.toString().toInt()
-            }
-        }
-
-
-        selectedTypes = typesAdapter.getSelectedItems()
-        viewModel.filterBy(selectedTypes!!, selectedGenres!!)
-        dialog.dismiss()
-        binding.tv.text = "Sort by: type:${selectedTypes.toString()}, genre:${selectedGenres}"
-        typesAdapter.clearSelectedItems()
-        genreAdapter.clearSelectedItems()
     }
 
-    private fun showGenre(){
+    private fun showGenre() {
         viewModel.getGenres()
 
         val genreDialog = Dialog(requireContext())
@@ -139,14 +169,28 @@ class MainFragment() : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout
         genreDialog.setContentView(genreBinding.root)
         genreDialog.window?.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
 
-        genreBinding.lvGenres.adapter = genreAdapter
+        genreBinding.lvGenres.adapter = when (binding.pager.currentItem) {
+            0 -> {
+                allMangaGenreAdapter
+            }
+            else -> {
+                topMangaGenreAdapter
+            }
+        }
 
         genreBinding.btnDismiss.setOnClickListener {
             genreDialog.dismiss()
         }
 
         genreBinding.btnApply.setOnClickListener {
-            selectedGenres = genreAdapter.getSelectedItems()
+            when (binding.pager.currentItem) {
+                0 -> {
+                    allMangaSelectedGenres = allMangaGenreAdapter.getSelectedItems()
+                }
+                else -> {
+                    topMangaSelectedGenres = topMangaGenreAdapter.getSelectedItems()
+                }
+            }
             genreDialog.dismiss()
         }
 
@@ -163,20 +207,19 @@ class MainFragment() : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout
         }
 
         viewModel.getGenresState.collectState(
-            onLoading = {
-
-            },
-            onError = {
-                context?.showToast(it)
-            },
+            {},
+            onError = { context?.showToast(it) },
             onSuccess = {
-                genreAdapter.submitList(it)
+                allMangaGenreAdapter.submitList(it)
+                topMangaGenreAdapter.submitList(it)
             }
         )
     }
 
     private fun openMangaDetails(id: String) {
-        findNavController().navigateSafely(R.id.action_mainFragment_to_mangaDetailFragment,
-            bundleOf(Constants.MANGA_ID_KEY to id))
+        findNavController().navigateSafely(
+            R.id.action_mainFragment_to_mangaDetailFragment,
+            bundleOf(Constants.MANGA_ID_KEY to id)
+        )
     }
 }
