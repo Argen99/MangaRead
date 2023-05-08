@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/authorizationFragment"
-        android:name="com.geektech.mangaread.presentation.ui.fragments.auth_flow.authorization.AuthorizationFragment"
+        android:name="com.geektech.mangaread.presentation.ui.fragments.auth_flow.auth_main.AuthMainFragment"
         android:label="fragment_authorization"
         tools:layout="@layout/fragment_authorization" />
 

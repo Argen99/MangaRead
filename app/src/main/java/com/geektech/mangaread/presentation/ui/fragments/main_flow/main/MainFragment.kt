@@ -26,7 +26,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
-class MainFragment() : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout.fragment_main) {
+class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(R.layout.fragment_main) {
 
     override val binding by viewBinding(FragmentMainBinding::bind)
     override val viewModel by activityViewModel<MainViewModel>()

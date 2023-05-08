@@ -1,4 +1,4 @@
-package com.geektech.mangaread.presentation.ui.fragments.auth_flow.authorization
+package com.geektech.mangaread.presentation.ui.fragments.auth_flow.auth_main
 
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -6,21 +6,23 @@ import com.geektech.mangaread.R
 import com.geektech.mangaread.core.base.BaseFragment
 import com.geektech.mangaread.core.extensions.activityNavController
 import com.geektech.mangaread.core.extensions.navigateSafely
+import com.geektech.mangaread.core.utils.Constants.AUTH_CURRENT_ITEM_INDEX
 import com.geektech.mangaread.databinding.FragmentAuthorizationBinding
 import com.geektech.mangaread.presentation.ui.adapters.AuthorizationPagerAdapter
+import com.geektech.mangaread.presentation.ui.fragments.auth_flow.AuthViewModel
 import com.geektech.mangaread.presentation.ui.fragments.auth_flow.sign_in.SignInFragment
 import com.geektech.mangaread.presentation.ui.fragments.auth_flow.sign_up.SignUpFragment
 import com.google.android.material.tabs.TabLayoutMediator
 
-class AuthorizationFragment : BaseFragment<FragmentAuthorizationBinding,
-        AuthorizationViewModel>(R.layout.fragment_authorization) {
+class AuthMainFragment : BaseFragment<FragmentAuthorizationBinding,
+        AuthViewModel>(R.layout.fragment_authorization) {
 
     override val binding by viewBinding(FragmentAuthorizationBinding::bind)
-    override val viewModel by viewModels<AuthorizationViewModel>()
+    override val viewModel by viewModels<AuthViewModel>()
     private lateinit var fragmentAdapter: AuthorizationPagerAdapter
 
     override fun initialize() {
-        val currentItemIndex = arguments?.getInt(FRAGMENT_KEY) ?: 0
+        val currentItemIndex = arguments?.getInt(AUTH_CURRENT_ITEM_INDEX) ?: 0
 
         fragmentAdapter = AuthorizationPagerAdapter(requireActivity())
         fragmentAdapter.addFragment(SignInFragment(this::btnLogin), getString(R.string.login))
@@ -40,9 +42,5 @@ class AuthorizationFragment : BaseFragment<FragmentAuthorizationBinding,
 
     private fun btnLogin() {
         activityNavController().navigateSafely(R.id.action_global_mainFlowFragment)
-    }
-
-    companion object {
-        const val FRAGMENT_KEY = "fragmentKey"
     }
 }

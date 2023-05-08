@@ -11,16 +11,17 @@ import com.geektech.mangaread.core.extensions.gone
 import com.geektech.mangaread.core.extensions.showToast
 import com.geektech.mangaread.core.extensions.visible
 import com.geektech.mangaread.databinding.FragmentSignInBinding
+import com.geektech.mangaread.presentation.ui.fragments.auth_flow.AuthViewModel
 import com.google.android.material.tabs.TabLayout
 import org.koin.android.ext.android.inject
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 class SignInFragment(private val signIn: () -> Unit) :
-    BaseFragment<FragmentSignInBinding, SignInViewModel>(
+    BaseFragment<FragmentSignInBinding, AuthViewModel>(
         R.layout.fragment_sign_in
     ) {
     override val binding by viewBinding(FragmentSignInBinding::bind)
-    override val viewModel by viewModel<SignInViewModel>()
+    override val viewModel by activityViewModel<AuthViewModel>()
 
     private val tokenManager: TokenManager by inject()
     private var tabs: TabLayout? = null

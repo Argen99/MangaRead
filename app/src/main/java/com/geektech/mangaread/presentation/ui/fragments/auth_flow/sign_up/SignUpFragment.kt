@@ -24,19 +24,20 @@ import com.geektech.mangaread.core.extensions.visible
 import com.geektech.mangaread.core.utils.Constants.READ_EXTERNAL_STORAGE_REQUEST_CODE
 import com.geektech.mangaread.core.utils.RealPathUtil
 import com.geektech.mangaread.databinding.FragmentSignUpBinding
+import com.geektech.mangaread.presentation.ui.fragments.auth_flow.AuthViewModel
 import com.google.android.material.tabs.TabLayout
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.asRequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import org.koin.android.ext.android.inject
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.activityViewModel
 import java.io.File
 
 class SignUpFragment(private val signIn: () -> Unit) :
-    BaseFragment<FragmentSignUpBinding, SignUpViewModel>(R.layout.fragment_sign_up) {
+    BaseFragment<FragmentSignUpBinding, AuthViewModel>(R.layout.fragment_sign_up) {
 
     override val binding by viewBinding(FragmentSignUpBinding::bind)
-    override val viewModel by viewModel<SignUpViewModel>()
+    override val viewModel by activityViewModel<AuthViewModel>()
 
     private val tokenManager: TokenManager by inject()
     private var tabs: TabLayout? = null

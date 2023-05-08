@@ -1,4 +1,4 @@
-package com.geektech.mangaread.presentation.ui.fragments.auth_flow.sign_up
+package com.geektech.mangaread.presentation.ui.fragments.auth_flow
 
 import com.geektech.domain.model.LoginRequest
 import com.geektech.domain.model.LoginResponse
@@ -11,16 +11,20 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import okhttp3.RequestBody
 
-class SignUpViewModel(
+class AuthViewModel(
+    private val userLoginUseCase: UserLoginUseCase,
     private val registerUserUseCase: UserRegisterUseCase,
-    private val userLoginUseCase: UserLoginUseCase
-) : BaseViewModel() {
+): BaseViewModel() {
+
+    private val _getUserLoginState = MutableStateFlow<UIState<LoginResponse>>(UIState.Empty())
+    val getUserLoginState = _getUserLoginState.asStateFlow()
 
     private val _getRegisterState = MutableStateFlow<UIState<User>>(UIState.Empty())
     val getRegisterState = _getRegisterState.asStateFlow()
 
-    private val _getUserLoginState = MutableStateFlow<UIState<LoginResponse>>(UIState.Empty())
-    val getUserLoginState = _getUserLoginState.asStateFlow()
+    fun userLogin(loginRequest: LoginRequest) {
+        userLoginUseCase.invoke(loginRequest).collectFlow(_getUserLoginState)
+    }
 
     fun userRegister(
         username: RequestBody,
@@ -32,9 +36,5 @@ class SignUpViewModel(
             username = username, nickname = nickname,
             imageFile = imageFile, password = password
         ).collectFlow(_getRegisterState)
-    }
-
-    fun userLogin(loginRequest: LoginRequest) {
-        userLoginUseCase.invoke(loginRequest).collectFlow(_getUserLoginState)
     }
 }

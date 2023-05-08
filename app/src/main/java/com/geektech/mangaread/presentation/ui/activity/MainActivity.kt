@@ -1,4 +1,4 @@
-package com.geektech.mangaread.presentation.ui.activities
+package com.geektech.mangaread.presentation.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -30,10 +30,10 @@ class MainActivity : AppCompatActivity() {
     private fun setupNavigation() {
         val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
         when {
-            tokenManager.getAccessToken() == null -> {
+            tokenManager.getAccessToken().isNullOrEmpty() -> {
                 navGraph.setStartDestination(R.id.authFlowFragment)
             }
-            tokenManager.getAccessToken() != null -> {
+            else -> {
                 navGraph.setStartDestination(R.id.mainFlowFragment)
             }
         }
@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
-        super.onDestroy()
         selectedItems.clearPrefs()
+        super.onDestroy()
     }
 }
