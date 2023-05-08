@@ -13,4 +13,7 @@
     <color name="light_gray">#E9E9E9</color>
     <color name="teal">#2FE09B</color>
 
+<!--    <color name="black_t">#9F000000</color>-->
+    <color name="black_t">#655B006A</color>
+
 </resources>

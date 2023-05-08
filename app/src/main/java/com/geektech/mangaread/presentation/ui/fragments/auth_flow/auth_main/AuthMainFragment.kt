@@ -1,6 +1,6 @@
 package com.geektech.mangaread.presentation.ui.fragments.auth_flow.auth_main
 
-import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.mangaread.R
 import com.geektech.mangaread.core.base.BaseFragment
@@ -13,12 +13,15 @@ import com.geektech.mangaread.presentation.ui.fragments.auth_flow.AuthViewModel
 import com.geektech.mangaread.presentation.ui.fragments.auth_flow.sign_in.SignInFragment
 import com.geektech.mangaread.presentation.ui.fragments.auth_flow.sign_up.SignUpFragment
 import com.google.android.material.tabs.TabLayoutMediator
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 class AuthMainFragment : BaseFragment<FragmentAuthorizationBinding,
         AuthViewModel>(R.layout.fragment_authorization) {
 
     override val binding by viewBinding(FragmentAuthorizationBinding::bind)
-    override val viewModel by viewModels<AuthViewModel>()
+    override val viewModel by activityViewModel<AuthViewModel>()
     private lateinit var fragmentAdapter: AuthorizationPagerAdapter
 
     override fun initialize() {
@@ -38,6 +41,14 @@ class AuthMainFragment : BaseFragment<FragmentAuthorizationBinding,
         TabLayoutMediator(binding.tabLayoutAuth, binding.pagerAuth) { tab, position ->
             tab.text = fragmentAdapter.getTabTitle(position)
         }.attach()
+    }
+
+    override fun setupObservers() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.pagerCurrentItem.collectLatest {
+                binding.pagerAuth.currentItem = it
+            }
+        }
     }
 
     private fun btnLogin() {

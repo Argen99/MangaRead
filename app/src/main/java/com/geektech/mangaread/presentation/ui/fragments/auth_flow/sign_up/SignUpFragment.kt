@@ -4,9 +4,7 @@ import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.net.Uri
 import android.provider.MediaStore
-import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -25,7 +23,6 @@ import com.geektech.mangaread.core.utils.Constants.READ_EXTERNAL_STORAGE_REQUEST
 import com.geektech.mangaread.core.utils.RealPathUtil
 import com.geektech.mangaread.databinding.FragmentSignUpBinding
 import com.geektech.mangaread.presentation.ui.fragments.auth_flow.AuthViewModel
-import com.google.android.material.tabs.TabLayout
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody.Companion.asRequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
@@ -40,8 +37,6 @@ class SignUpFragment(private val signIn: () -> Unit) :
     override val viewModel by activityViewModel<AuthViewModel>()
 
     private val tokenManager: TokenManager by inject()
-    private var tabs: TabLayout? = null
-    private var imageUri: Uri? = null
     private var imageUriPath: String? = null
     private lateinit var etUserName: String
     private lateinit var etPassword: String
@@ -52,16 +47,11 @@ class SignUpFragment(private val signIn: () -> Unit) :
                 val data: Intent? = result.data
                 val pickedImage = data?.data
                 if (pickedImage != null) {
-                    imageUri = pickedImage
                     imageUriPath = RealPathUtil.getRealPathFromURI(requireContext(), pickedImage)!!
                     binding.ivAvatar.loadImage(pickedImage.toString())
                 }
             }
         }
-
-    override fun initialize() {
-        tabs = activity?.findViewById<View>(R.id.tab_layout_auth) as TabLayout
-    }
 
     override fun setupClickListeners() {
         binding.tvSetAvatar.setOnClickListener {
@@ -73,7 +63,7 @@ class SignUpFragment(private val signIn: () -> Unit) :
         }
 
         binding.tvSignIn.setOnClickListener {
-            tabs?.let { it.getTabAt(0)?.select() }
+            viewModel.setCurrentPagerItem(0)
         }
     }
 
@@ -93,7 +83,6 @@ class SignUpFragment(private val signIn: () -> Unit) :
         viewModel.getUserLoginState.collectState(
             onError = { message ->
                 context?.showToast(message)
-                tabs?.let { it.getTabAt(0)?.select() }
             },
             onSuccess = {
                 successSignIn(it)

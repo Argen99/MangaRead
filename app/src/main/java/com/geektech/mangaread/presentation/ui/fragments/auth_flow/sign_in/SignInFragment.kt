@@ -1,6 +1,5 @@
 package com.geektech.mangaread.presentation.ui.fragments.auth_flow.sign_in
 
-import android.view.View
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.geektech.data.local_db.prefs.TokenManager
 import com.geektech.domain.model.LoginRequest
@@ -12,7 +11,6 @@ import com.geektech.mangaread.core.extensions.showToast
 import com.geektech.mangaread.core.extensions.visible
 import com.geektech.mangaread.databinding.FragmentSignInBinding
 import com.geektech.mangaread.presentation.ui.fragments.auth_flow.AuthViewModel
-import com.google.android.material.tabs.TabLayout
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
@@ -24,11 +22,6 @@ class SignInFragment(private val signIn: () -> Unit) :
     override val viewModel by activityViewModel<AuthViewModel>()
 
     private val tokenManager: TokenManager by inject()
-    private var tabs: TabLayout? = null
-
-    override fun initialize() {
-        tabs = activity?.findViewById<View>(R.id.tab_layout_auth) as TabLayout
-    }
 
     override fun setupClickListeners() {
         binding.btnSignIn.setOnClickListener {
@@ -49,7 +42,7 @@ class SignInFragment(private val signIn: () -> Unit) :
         )
 
         binding.tvRegister.setOnClickListener {
-            tabs?.let { it.getTabAt(1)?.select() }
+            viewModel.setCurrentPagerItem(1)
         }
     }
 

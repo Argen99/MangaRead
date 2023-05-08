@@ -23,8 +23,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dimen_margin_8"
+            android:padding="@dimen/dimen_margin_8"
             android:orientation="vertical"
+            android:background="@color/black_t"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
@@ -59,13 +60,6 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/dimen_text_14"
                 tools:text="Название аниме" />
-
-            <!--            <com.google.android.material.textview.MaterialTextView-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:textSize="@dimen/dimen_text_14"-->
-            <!--                android:text="Оно может"-->
-            <!--                android:textColor="@color/white" />-->
 
         </LinearLayout>
 
